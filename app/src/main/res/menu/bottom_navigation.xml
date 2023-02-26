@@ -3,13 +3,14 @@
     <item
         android:id="@+id/radio"
         android:icon="@drawable/home_icon"
-        android:title="home"></item>
+        android:title="Home"/>
+
     <item
         android:id="@+id/sebha"
         android:icon="@drawable/about_us"
-        android:title="about us"></item>
+        android:title="About us"/>
     <item
-        android:id="@+id/hadeth"
+        android:id="@+id/contact_us"
         android:icon="@drawable/contact_us"
-        android:title="contact us"></item>
+        android:title="Contact us"/>
 </menu>

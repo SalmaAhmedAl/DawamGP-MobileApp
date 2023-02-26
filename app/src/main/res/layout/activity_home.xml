@@ -5,24 +5,39 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeActivity">
-   <com.google.android.material.card.MaterialCardView
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       app:cardCornerRadius="12dp"
-       android:elevation="8dp"
-       app:cardUseCompatPadding="true"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       android:layout_margin="8dp">
-       <androidx.appcompat.widget.SearchView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:queryHint="Search"
-           app:iconifiedByDefault="false"
 
-           app:queryBackground="@color/transparent"
-           android:outlineAmbientShadowColor="@color/brown"
-           />
-   </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/brown"
+        app:strokeWidth="2dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@color/transparent"
+            app:queryHint="@string/search"
+            app:searchIcon="@drawable/ic_search"
+            app:closeIcon="@drawable/ic_close"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
+        app:layout_constraintStart_toEndOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="@id/materialCardView"
+        android:src="@drawable/dawam_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
