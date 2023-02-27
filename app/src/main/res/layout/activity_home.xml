@@ -33,14 +33,14 @@
             />
     </com.google.android.material.card.MaterialCardView>
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="65dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
         app:layout_constraintStart_toEndOf="@id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         android:scaleType="fitCenter"
         app:layout_constraintTop_toTopOf="@id/materialCardView"
-        android:src="@drawable/dawam_logo" />
+        android:src="@drawable/ic_dawam_logo" />
      <TextView
          android:id="@+id/title"
          android:layout_width="match_parent"

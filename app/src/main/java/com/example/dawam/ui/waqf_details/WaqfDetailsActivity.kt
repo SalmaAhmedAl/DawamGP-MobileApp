@@ -18,5 +18,15 @@ class WaqfDetailsActivity : AppCompatActivity() {
 
        viewBinding.content.waqfName.text=waqfName
 
+        initListeners()
+
+    }
+
+    private fun initListeners() {
+        with(viewBinding) {
+            backBtn.setOnClickListener{
+                finish()
+            }
+        }
     }
 }
