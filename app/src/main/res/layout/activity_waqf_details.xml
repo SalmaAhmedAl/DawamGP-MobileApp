@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.waqf_details.WaqfDetailsActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/logo_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_dawam_logo"
+                    android:layout_margin="8dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/back_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/arrow_back"
+                    android:background="@color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/content"
+        layout="@layout/content_waqf_details_activity" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
