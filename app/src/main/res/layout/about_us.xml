@@ -12,7 +12,7 @@
     android:adjustViewBounds="true"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    android:src="@drawable/logo_icon"
+    android:src="@drawable/ic_dawam_logo"
     android:layout_margin="8dp"
     />
     <FrameLayout
