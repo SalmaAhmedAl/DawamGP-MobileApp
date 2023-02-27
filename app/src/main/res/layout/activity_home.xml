@@ -8,13 +8,14 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
-        android:layout_width="0dp"
+       android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:elevation="8dp"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/brown"
         app:strokeWidth="2dp">
@@ -32,8 +33,8 @@
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
         app:layout_constraintStart_toEndOf="@id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
