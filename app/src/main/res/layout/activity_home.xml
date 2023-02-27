@@ -41,8 +41,59 @@
         android:scaleType="fitCenter"
         app:layout_constraintTop_toTopOf="@id/materialCardView"
         android:src="@drawable/dawam_logo" />
+     <TextView
+         android:id="@+id/title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/dawam"
+         android:textSize="20sp"
+         android:textColor="@color/golden"
+         android:fontFamily="@font/cairo_semi_bold"
+         app:layout_constraintTop_toBottomOf="@id/materialCardView"
+         android:layout_marginHorizontal="16dp"
+         android:layout_marginTop="16dp"/>
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dawam_info"
+        android:textSize="16sp"
+        android:textColor="@color/blueBlack"
+        android:fontFamily="@font/cairo"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"/>
 
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        android:layout_marginVertical="16dp"
+        android:background="@color/brown"
+        />
+
+    <TextView
+        android:id="@+id/awqaf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/awqaf"
+        android:textSize="20sp"
+        android:textColor="@color/brown2"
+        android:fontFamily="@font/cairo"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/waqf_recycler"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintTop_toBottomOf="@id/awqaf"
+      />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
