@@ -29,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-
-        android:layout_margin="8dp"
+        android:background="@drawable/rounded"
+        android:layout_margin="6dp"
         app:itemIconTint="@drawable/bottom_navigation_item_selected"
         app:menu="@menu/bottom_navigation"
         />
