@@ -8,8 +8,10 @@
     <color name="brown2">#A97949</color>
     <color name="brown3">#ECDDC3</color>
     <color name="brown4">#F2EEE5</color>
+    <color name="golden">#D3A355</color>
     <color name="shade_of_green">#E2E7CE</color>
     <color name="shade_of_green2">#F0F2E1</color>
-
+    <color name="black30">#303030</color>
+    <color name="blueBlack">#42505C</color>
     <color name="gray">#707070</color>
 </resources>

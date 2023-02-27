@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">DAWAM</string>
     <string name="search">بحث</string>
+    <string name="dawam_info">هو وسيلة لحماية الحجج الوقفية
+بصورة لامركزية باستخدام تقنية البلوكتشين
+ضد تغير الظروف وعبر الأعوام</string>
+
+    <string name="dawam">دوام</string>
+    <string name="awqaf">الأوقاف</string>
 </resources>
