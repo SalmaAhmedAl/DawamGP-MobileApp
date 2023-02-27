@@ -1,119 +1,50 @@
 package com.example.dawam.ui.home
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
-import com.example.dawam.ui.Constants
-import com.example.dawam.ui.waqf_details.WaqfDetailsActivity
+import com.example.dawam.ui.about.AboutUsFragment
+import com.example.dawam.ui.contactUs.ContactUsFragment
+import com.google.android.material.navigation.NavigationBarView
 
 class HomeActivity : AppCompatActivity() {
     lateinit var viewBinding: ActivityHomeBinding
-    lateinit var adapter: WaqfAdapter
-    var awqaf = listOf(
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        ),
-        Waqf(
-            name = "جامعة القاهرة",
-            "أكتوبر سنة 1906م",
-            "شعبان 1324 هجريًا",
-            R.drawable.cairo_college
-        )
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-
-        initRecyclerView()
+        initBottomNav()
     }
 
-    private fun initRecyclerView() {
-        adapter = WaqfAdapter(awqaf)
-        adapter.onWaqfClick = object : WaqfAdapter.OnWaqfClick {
-            override fun onWaqfBtnClick(name: String, position: Int, image:Int) {
-                //We should start new activity ==> Waqf details
-                val intent = Intent(this@HomeActivity, WaqfDetailsActivity::class.java)
-                intent.putExtra(Constants.WAQF_NAME_EXTRA, name)
-                intent.putExtra(Constants.WAQF_IMAGE_EXTRA, image)
-                startActivity(intent)
+    private fun initBottomNav() {
+        viewBinding.bottomNav.setOnItemSelectedListener(object :NavigationBarView.OnItemSelectedListener{
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when(item.itemId){
+                    R.id.home ->{
+                        showFragment(HomeFragment())
+                    }
+                    R.id.about_us ->{
+                        showFragment(AboutUsFragment())
+                    }
+                    R.id.contact_us ->{
+                        showFragment(ContactUsFragment())
+                    }
+                }
+                return true
             }
 
-        }
+        })
+        viewBinding.bottomNav.selectedItemId=R.id.home
 
-        viewBinding.waqfRecycler.adapter=adapter
+    }
+
+    fun showFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment).commit()
     }
 
 }

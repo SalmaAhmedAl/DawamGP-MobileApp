@@ -1,8 +1,7 @@
-package com.example.dawam.ui.home
+package com.example.dawam.ui.home.recycler_view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dawam.databinding.ItemWaqfBinding
 
@@ -14,18 +13,18 @@ class WaqfAdapter (val items:List<Waqf>):RecyclerView.Adapter<WaqfAdapter.ViewHo
         return ViewHolder(viewBinding)
     }
 
-    var onWaqfClick:OnWaqfClick ?=null
+    var onWaqfClick: OnWaqfClick?=null
     interface OnWaqfClick{
-        fun onWaqfBtnClick(name: String , position:Int, image:Int)
+        fun onWaqfBtnClick(name: String , image:Int)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item =items.get(position)
-        holder.viewBinding.waqfName.text=item.name
+        holder.viewBinding.waqfName.text=item.waqfName
         holder.viewBinding.waqfDateM.text=item.dateM
         holder.viewBinding.waqfDateHj.text=item.dateHj
         holder.viewBinding.image.setImageResource(item.imageId)
-        holder.viewBinding.moreDetailsBtn.setOnClickListener {onWaqfClick?.onWaqfBtnClick(item.name,position, item.imageId)}
+        holder.viewBinding.moreDetailsBtn.setOnClickListener {onWaqfClick?.onWaqfBtnClick(item.waqfName, item.imageId)}
     }
 
     override fun getItemCount(): Int =items.size

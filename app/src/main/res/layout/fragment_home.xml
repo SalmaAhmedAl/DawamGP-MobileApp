@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/brown"
+        app:strokeWidth="2dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@color/transparent"
+            app:searchIcon="@drawable/ic_search"
+            app:closeIcon="@drawable/ic_close"
+            app:queryHint="@string/search"
+            />
+    </com.google.android.material.card.MaterialCardView>
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
+        app:layout_constraintStart_toEndOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="@id/materialCardView"
+        android:src="@drawable/ic_dawam_logo" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dawam"
+        android:textSize="20sp"
+        android:textColor="@color/golden"
+        android:fontFamily="@font/cairo_semi_bold"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dawam_info"
+        android:textSize="16sp"
+        android:textColor="@color/blueBlack"
+        android:fontFamily="@font/cairo"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        android:layout_marginVertical="16dp"
+        android:background="@color/brown"
+        />
+
+    <TextView
+        android:id="@+id/awqaf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/awqaf"
+        android:textSize="20sp"
+        android:textColor="@color/brown2"
+        android:fontFamily="@font/cairo"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/waqf_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/awqaf"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
