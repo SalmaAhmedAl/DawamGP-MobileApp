@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.FragmentHomeBinding
 import com.example.dawam.ui.Constants.WAQF_IMAGE_EXTRA
-import com.example.dawam.ui.Constants.WAQF_NAME_EXTRA
 import com.example.dawam.ui.home.recycler_view.Waqf
 import com.example.dawam.ui.home.recycler_view.WaqfAdapter
 import com.example.dawam.ui.waqf_details.WaqfDetailsActivity
@@ -47,7 +46,6 @@ class HomeFragment:Fragment() {
             override fun onWaqfBtnClick(name: String,  image:Int) {
                 //We should start new activity ==> Waqf details
                 val intent = Intent(requireActivity(), WaqfDetailsActivity::class.java)
-                intent.putExtra(WAQF_NAME_EXTRA, name)
                 intent.putExtra(WAQF_IMAGE_EXTRA, image)
                 startActivity(intent)
             }
