@@ -32,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@id/contact_us"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_design"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

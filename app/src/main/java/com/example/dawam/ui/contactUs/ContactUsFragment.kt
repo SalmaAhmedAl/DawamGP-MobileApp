@@ -37,7 +37,7 @@ class ContactUsFragment :Fragment(){
         itemDM(
             R.drawable.phone_icon,
             contactText ="+20-11-xxxx-xxxx"
-        ),
+        )
 
         )
     override fun onCreateView(
@@ -47,9 +47,12 @@ class ContactUsFragment :Fragment(){
     ): View {
         viewBinding= FragmentContactUsBinding.inflate(inflater, container, false)
         return viewBinding.root
+
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         adpater=ItemAdapter(items)
         viewBinding.contactUsRecycler.adapter=adpater
-
-
     }
 }

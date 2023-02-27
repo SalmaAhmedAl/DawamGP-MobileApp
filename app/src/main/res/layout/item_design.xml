@@ -11,7 +11,8 @@
         android:adjustViewBounds="true"
         android:layout_margin="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text"
+        app:layout_constraintBottom_toBottomOf="@id/text"
         tools:src="@drawable/facebook_icon"
         />
 
