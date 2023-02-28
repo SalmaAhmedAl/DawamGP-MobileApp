@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent">
 
     <ImageView
@@ -15,55 +16,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/next_arow"
-        android:layout_width="14dp"
-        android:layout_height="20dp"
-        android:src="@drawable/next"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
-
-    <TextView
+    <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:drawableEnd="@drawable/ic_next"
+        android:fontFamily="@font/cairo_semi_bold"
         android:text="التالي"
-        android:layout_marginStart="8dp"
-        style="@style/transation_section"
-        app:layout_constraintStart_toEndOf="@id/next_arow"
+        android:textColor="@color/brown"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
-    <TextView
-        android:id="@+id/previos"
+    <Button
+        android:id="@+id/previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:drawableLeft="@drawable/ic_previous"
+        android:fontFamily="@font/cairo_semi_bold"
         android:text="السابق"
-        android:layout_marginTop="1.5dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/previos_arow"
-        style="@style/transation_section"
+        android:textColor="@color/brown"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
-    <ImageView
-        android:id="@+id/previos_arow"
-        android:layout_width="14dp"
-        android:layout_height="20dp"
-        android:src="@drawable/previos"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
 
     <FrameLayout
-        android:layout_marginTop="24sp"
         android:id="@+id/fragment_contaner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previos"
-         />
+        app:layout_constraintTop_toBottomOf="@id/previous" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
