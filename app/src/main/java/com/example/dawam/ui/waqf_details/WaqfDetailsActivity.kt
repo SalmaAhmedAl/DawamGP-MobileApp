@@ -33,6 +33,7 @@ class WaqfDetailsActivity : AppCompatActivity() {
         val waqfImage = intent.getIntExtra(WAQF_IMAGE_EXTRA, R.drawable.cairo_college)
         viewBinding.content.image.setImageResource(waqfImage)
 
+
         initListeners()
 
         initRecyclerView()
