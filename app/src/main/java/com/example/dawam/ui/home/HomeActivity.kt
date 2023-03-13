@@ -1,13 +1,14 @@
 package com.example.dawam.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
 import com.example.dawam.ui.about.AboutUsFragment
 import com.example.dawam.ui.contactUs.ContactUsFragment
+import com.example.dawam.ui.submit.SubmitRequestFragment
 import com.google.android.material.navigation.NavigationBarView
 
 class HomeActivity : AppCompatActivity() {
@@ -24,15 +25,18 @@ class HomeActivity : AppCompatActivity() {
         viewBinding.bottomNav.setOnItemSelectedListener(object :NavigationBarView.OnItemSelectedListener{
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
-                when(item.itemId){
-                    R.id.home ->{
+                when (item.itemId) {
+                    R.id.home -> {
                         showFragment(HomeFragment())
                     }
-                    R.id.about_us ->{
+                    R.id.about_us -> {
                         showFragment(AboutUsFragment())
                     }
-                    R.id.contact_us ->{
+                    R.id.contact_us -> {
                         showFragment(ContactUsFragment())
+                    }
+                    R.id.submet -> {
+                        showFragment(SubmitRequestFragment())
                     }
                 }
                 return true
