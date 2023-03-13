@@ -1,15 +1,15 @@
 package com.example.dawam.ui.about.aboutawqaf
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dawam.R
+import androidx.fragment.app.Fragment
+import com.example.dawam.databinding.FragmentAboutawqafBinding
 
 
 class AboutawqafFragment : Fragment() {
-
+    lateinit var viewBinding: FragmentAboutawqafBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -20,7 +20,8 @@ class AboutawqafFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_aboutawqaf, container, false)
+        viewBinding = FragmentAboutawqafBinding.inflate(inflater, container, false)
+        return viewBinding.root
     }
 
 
