@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/apply"
-        android:icon="@drawable/ic_apply"
+        android:icon="@drawable/ic_apply_outlined"
         android:title="@string/apply" />
     <item
         android:id="@+id/contact_us"
