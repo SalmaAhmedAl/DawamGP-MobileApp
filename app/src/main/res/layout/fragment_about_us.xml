@@ -22,11 +22,12 @@
         android:background="@color/transparent"
         android:drawableEnd="@drawable/ic_next"
         android:fontFamily="@font/cairo_semi_bold"
-        android:text="التالي"
+        android:text="@string/next"
         android:textColor="@color/brown"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
+        app:layout_constraintTop_toTopOf="@id/previous"
+        app:layout_constraintBottom_toBottomOf="@id/previous"/>
 
     <Button
         android:id="@+id/previous"
@@ -35,7 +36,7 @@
         android:background="@color/transparent"
         android:drawableLeft="@drawable/ic_previous"
         android:fontFamily="@font/cairo_semi_bold"
-        android:text="السابق"
+        android:text="@string/previous"
         android:textColor="@color/brown"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"

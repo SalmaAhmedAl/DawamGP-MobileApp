@@ -8,7 +8,7 @@ import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
 import com.example.dawam.ui.about.AboutUsFragment
 import com.example.dawam.ui.contactUs.ContactUsFragment
-import com.example.dawam.ui.submit.SubmitRequestFragment
+import com.example.dawam.ui.apply_waqf.ApplyWaqfRequestFragment
 import com.google.android.material.navigation.NavigationBarView
 
 class HomeActivity : AppCompatActivity() {
@@ -35,8 +35,8 @@ class HomeActivity : AppCompatActivity() {
                     R.id.contact_us -> {
                         showFragment(ContactUsFragment())
                     }
-                    R.id.submet -> {
-                        showFragment(SubmitRequestFragment())
+                    R.id.apply -> {
+                        showFragment(ApplyWaqfRequestFragment())
                     }
                 }
                 return true

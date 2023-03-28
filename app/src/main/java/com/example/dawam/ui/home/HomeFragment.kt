@@ -50,7 +50,7 @@ class HomeFragment:Fragment() {
                 startActivity(intent)
             }
         }
-        viewBinding.waqfRecycler.adapter=adapter
+        viewBinding.content.waqfRecycler.adapter=adapter
     }
 }
 

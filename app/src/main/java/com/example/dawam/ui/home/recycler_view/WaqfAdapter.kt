@@ -3,13 +3,13 @@ package com.example.dawam.ui.home.recycler_view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dawam.databinding.ItemWaqfBinding
+import com.example.dawam.databinding.ItemWaqfHomeBinding
 
 class WaqfAdapter (val items:List<Waqf>):RecyclerView.Adapter<WaqfAdapter.ViewHolder>(){
-    class ViewHolder (val viewBinding:ItemWaqfBinding):RecyclerView.ViewHolder(viewBinding.root)
+    class ViewHolder (val viewBinding:ItemWaqfHomeBinding):RecyclerView.ViewHolder(viewBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewBinding = ItemWaqfBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val viewBinding = ItemWaqfHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(viewBinding)
     }
 
