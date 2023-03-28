@@ -11,7 +11,8 @@
         app:elevation="0dp">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll">
 
                <androidx.constraintlayout.widget.ConstraintLayout
                    android:layout_width="match_parent"
@@ -33,7 +34,7 @@
                        <androidx.appcompat.widget.SearchView
                            android:id="@+id/search_bar"
                            android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
+                           android:layout_height="40dp"
                            android:layoutDirection="rtl"
                            app:iconifiedByDefault="false"
                            app:queryBackground="@color/transparent"
@@ -44,7 +45,7 @@
                    </com.google.android.material.card.MaterialCardView>
                    <ImageView
                        android:id="@+id/logo"
-                       android:layout_width="65dp"
+                       android:layout_width="40dp"
                        android:layout_height="0dp"
                        app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
                        app:layout_constraintStart_toEndOf="@id/materialCardView"
@@ -91,6 +92,6 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_home" android:id="@+id/content"/>
+    <include layout="@layout/content_home_fragment" android:id="@+id/content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

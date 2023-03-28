@@ -1,16 +1,15 @@
-package com.example.dawam.ui.about.aboutApplication
+package com.example.dawam.ui.about.about_us1
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.dawam.databinding.FragmentAboutApplicationBinding
+import com.example.dawam.databinding.FrameAboutUs1Binding
 
 
-class AboutApplicationFragment : Fragment() {
-
-    lateinit var viewBinding: FragmentAboutApplicationBinding
+class AboutUs1Fragment : Fragment() {
+    lateinit var viewBinding: FrameAboutUs1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,7 +20,7 @@ class AboutApplicationFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        viewBinding = FragmentAboutApplicationBinding.inflate(inflater, container, false)
+        viewBinding = FrameAboutUs1Binding.inflate(inflater, container, false)
         return viewBinding.root
     }
 

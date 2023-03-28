@@ -53,6 +53,6 @@ class ContactUsFragment :Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         adpater=ItemAdapter(items)
-        viewBinding.contactUsRecycler.adapter=adpater
+        viewBinding.content.contactUsRecycler.adapter=adpater
     }
 }

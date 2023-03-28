@@ -13,14 +13,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="title_conact_us">
+
+
+    <style name="contact_us_title">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/cairo</item>
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="text_item_conact_us">
+
+
+    <style name="contact_us_text_item">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/cairo</item>
         <item name="android:textSize">16sp</item>
     </style>
     <style name="transation_section">
@@ -28,10 +34,11 @@
         <item name="android:textColor">@color/brown</item>
         <item name="android:textSize">12sp</item>
     </style>
-    <style name="waqf_descreption">
+    <style name="about_us_description">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/cairo</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginStart">8dp</item>
     </style>

@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="dshkaklsdjahfihglas"
-        style="@style/text_item_conact_us"
+        style="@style/contact_us_text_item"
         app:layout_constraintEnd_toStartOf="@+id/icon"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="8dp"

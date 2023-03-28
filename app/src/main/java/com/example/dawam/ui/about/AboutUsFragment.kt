@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.FragmentAboutUsBinding
-import com.example.dawam.ui.about.aboutBlockChain.AboutBlockChainFragment
-import com.example.dawam.ui.about.aboutawqaf.AboutawqafFragment
+import com.example.dawam.ui.about.about_us3.AboutUs3Fragment
+import com.example.dawam.ui.about.about_us1.AboutUs1Fragment
+import com.example.dawam.ui.about.about_us2.AboutUs2Fragment
 
 class AboutUsFragment :Fragment(){
     lateinit var viewBinding: FragmentAboutUsBinding
@@ -23,26 +24,46 @@ class AboutUsFragment :Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showAboutWaqfFragment()
-        viewBinding.next.setOnClickListener {
-            showblockchainFragment()
+        var k = 1
+        showFragment1()
+        viewBinding.content.next.setOnClickListener {
+            if(k==1){
+                k++
+                showFragment2()
+            }else if(k==2){
+                k++
+                showFragment3()
+            }
         }
-        viewBinding.previous.setOnClickListener {
-            showAboutWaqfFragment()
+        viewBinding.content.previous.setOnClickListener {
+            if(k==3){
+                k--
+                showFragment2()
+            }else if(k==2){
+                k--
+                showFragment1()
+            }
+
         }
     }
 
-    fun showblockchainFragment() {
-        val blockchainFragment = AboutBlockChainFragment()
+    private fun showFragment1() {
+        val aboutFragment1 = AboutUs1Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
-            ?.replace(R.id.fragment_aboutus_contaner, blockchainFragment, "fragmnetId")
+            ?.replace(R.id.fragment_about_us_container, aboutFragment1, "fragmnetId")
             ?.commit()
     }
 
-    fun showAboutWaqfFragment() {
-        val AboutWaqfFragment = AboutawqafFragment()
+    private fun showFragment2() {
+        val aboutFragment2 = AboutUs2Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
-            ?.replace(R.id.fragment_aboutus_contaner, AboutWaqfFragment, "fragmnetId")
+            ?.replace(R.id.fragment_about_us_container, aboutFragment2, "fragmnetId")
+            ?.commit()
+    }
+    private fun showFragment3() {
+        val aboutFragment3 = AboutUs3Fragment()
+        activity?.getSupportFragmentManager()?.beginTransaction()
+            ?.replace(R.id.fragment_about_us_container, aboutFragment3, "fragmnetId")
             ?.commit()
     }
 
