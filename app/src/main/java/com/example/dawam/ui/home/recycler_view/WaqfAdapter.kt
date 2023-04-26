@@ -9,7 +9,10 @@ class WaqfAdapter (val items:List<Waqf>):RecyclerView.Adapter<WaqfAdapter.ViewHo
     class ViewHolder (val viewBinding:ItemWaqfHomeBinding):RecyclerView.ViewHolder(viewBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewBinding = ItemWaqfHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val viewBinding = ItemWaqfHomeBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false)
         return ViewHolder(viewBinding)
     }
 

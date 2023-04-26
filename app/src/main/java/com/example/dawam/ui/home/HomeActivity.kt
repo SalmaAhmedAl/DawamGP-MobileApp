@@ -3,6 +3,7 @@ package com.example.dawam.ui.home
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
@@ -16,8 +17,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(viewBinding.root)
+//        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
+//        setContentView(viewBinding.root)
+        viewBinding=DataBindingUtil.setContentView(this,R.layout.activity_home)
         initBottomNav()
     }
 

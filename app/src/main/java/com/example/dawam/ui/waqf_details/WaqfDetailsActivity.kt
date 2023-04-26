@@ -2,6 +2,7 @@ package com.example.dawam.ui.waqf_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityWaqfDetailsBinding
 import com.example.dawam.ui.Constants.WAQF_IMAGE_EXTRA
@@ -26,8 +27,9 @@ class WaqfDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding= ActivityWaqfDetailsBinding.inflate(layoutInflater)
-        setContentView(viewBinding.root)
+//        viewBinding= ActivityWaqfDetailsBinding.inflate(layoutInflater)
+//        setContentView(viewBinding.root)
+        viewBinding= DataBindingUtil.setContentView(this,R.layout.activity_waqf_details)
 
         //intent
         val waqfImage = intent.getIntExtra(WAQF_IMAGE_EXTRA, R.drawable.cairo_college)
