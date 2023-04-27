@@ -1,4 +1,4 @@
-package com.example.dawam.ui.contactUs
+package com.example.dawam.ui.contact_us
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.FragmentContactUsBinding
-import com.example.dawam.ui.contactUs.recyclerview.ItemAdapter
-import com.example.dawam.ui.contactUs.recyclerview.itemDM
+import com.example.dawam.ui.contact_us.recyclerview.ItemAdapter
+import com.example.dawam.ui.contact_us.recyclerview.itemDM
 
 class ContactUsFragment :Fragment(){
     lateinit var viewBinding: FragmentContactUsBinding

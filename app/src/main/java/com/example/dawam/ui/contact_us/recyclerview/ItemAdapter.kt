@@ -1,4 +1,4 @@
-package com.example.dawam.ui.contactUs.recyclerview
+package com.example.dawam.ui.contact_us.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

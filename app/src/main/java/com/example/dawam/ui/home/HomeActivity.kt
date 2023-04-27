@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
 import com.example.dawam.ui.about.AboutUsFragment
-import com.example.dawam.ui.contactUs.ContactUsFragment
+import com.example.dawam.ui.contact_us.ContactUsFragment
 import com.example.dawam.ui.apply_waqf.ApplyWaqfRequestFragment
 import com.google.android.material.navigation.NavigationBarView
 
