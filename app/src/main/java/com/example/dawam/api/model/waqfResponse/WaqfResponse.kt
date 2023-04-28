@@ -13,6 +13,7 @@ data class WaqfResponse(
     @field:SerializedName("waqfCity") var waqfCity:String,
     @field:SerializedName("waqfType") var waqfType:String,
     @field:SerializedName("waqfActivity") var waqfActivity:String,
+    @field:SerializedName("imageUrl") var imageUrl:String,
     @field:SerializedName("documentUrl") var documentUrl:String,
     )
 
