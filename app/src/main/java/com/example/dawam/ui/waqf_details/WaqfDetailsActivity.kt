@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.example.dawam.R
 import com.example.dawam.api.ApiManager
 import com.example.dawam.api.model.waqfResponse.WaqfResponse
@@ -42,7 +43,10 @@ class WaqfDetailsActivity : AppCompatActivity() {
         ApiManager.getApis().getWaqfById(id).enqueue(object : Callback<WaqfDetailsResponse>{
             override fun onResponse(call: Call<WaqfDetailsResponse>, response: Response<WaqfDetailsResponse>) {
                 if(response.isSuccessful){
+
                     val waqf = response.body()
+                    viewBinding.title.text= waqf!!.waqfName
+
                     val  items = listOf(
                         LineItem("اسم الوقف:", waqf!!.waqfName),
                         LineItem("اسم الواقف:", waqf.founderName),
@@ -54,6 +58,10 @@ class WaqfDetailsActivity : AppCompatActivity() {
                         LineItem("وصف الوقف:", waqf.waqfDescription)
                     )
                     initRecyclerView(items )
+                    Glide.with(this@WaqfDetailsActivity)
+                        .load("http://afdinc-001-site5.itempurl.com/"+waqf.imageUrl)
+                        .override(360, 250)
+                        .into(viewBinding.content.image);
                 }else{
                     showErrorLayout(response.errorBody()?.string() ?: "Fail", id)
                 }
