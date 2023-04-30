@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dawam.api.ApiManager
 import com.example.dawam.api.model.waqfResponse.WaqfResponse
 import com.example.dawam.databinding.FragmentHomeBinding
-import com.example.dawam.ui.home.recycler_view.Waqf
 import com.example.dawam.ui.home.recycler_view.WaqfAdapter
 import com.example.dawam.ui.waqf_details.WaqfDetailsActivity
 import retrofit2.Call
@@ -76,9 +75,10 @@ class HomeFragment:Fragment() {
     private fun initRecyclerView(awqaf:ArrayList<WaqfResponse>?) {
         adapter = WaqfAdapter(awqaf)
         adapter.onWaqfClick = object : WaqfAdapter.OnWaqfClick {
-            override fun onWaqfBtnClick(name: String) {
-                //We should start new activity ==> WaqfResponse details
+            override fun onWaqfBtnClick(id: Int) {
+                //We should start new activity ==> Waqf details
                 val intent = Intent(requireActivity(), WaqfDetailsActivity::class.java)
+                intent.putExtra("ID", id)
                 startActivity(intent)
             }
         }
@@ -95,6 +95,9 @@ class HomeFragment:Fragment() {
         viewBinding.content.errorLayout.isVisible=true
         viewBinding.content.loadingIndicator.isVisible=false
         viewBinding.content.errorMessage.text= errorMessage
+        viewBinding.content.tryAgainBtn.setOnClickListener{
+            loadAwqafListInHome()
+        }
     }
 }
 
