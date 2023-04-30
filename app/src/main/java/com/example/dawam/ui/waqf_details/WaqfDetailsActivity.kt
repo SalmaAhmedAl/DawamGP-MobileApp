@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.dawam.R
 import com.example.dawam.api.ApiManager
 import com.example.dawam.api.model.waqfResponse.WaqfResponse
+import com.example.dawam.api.model.wqfDetailsResponse.WaqfDetailsResponse
 import com.example.dawam.databinding.ActivityWaqfDetailsBinding
 import com.example.dawam.ui.Constants.WAQF_IMAGE_EXTRA
 import com.example.dawam.ui.waqf_details.recycler_view.LineItem
@@ -37,33 +38,34 @@ class WaqfDetailsActivity : AppCompatActivity() {
 
 
     }
-     lateinit var items:List<LineItem>
     private fun loadWaqfDetails(id :Int){
-        ApiManager.getApis().getWaqfById(id).enqueue(object : Callback<WaqfResponse>{
-            override fun onResponse(call: Call<WaqfResponse>, response: Response<WaqfResponse>) {
+        ApiManager.getApis().getWaqfById(id).enqueue(object : Callback<WaqfDetailsResponse>{
+            override fun onResponse(call: Call<WaqfDetailsResponse>, response: Response<WaqfDetailsResponse>) {
                 if(response.isSuccessful){
                     val waqf = response.body()
-                     items = listOf(
+                    val  items = listOf(
                         LineItem("اسم الوقف:", waqf!!.waqfName),
                         LineItem("اسم الواقف:", waqf.founderName),
                         LineItem("تاريخ الوقف هجريًا:",waqf.establishmentDateH),
                         LineItem("تاريخ الوقف ميلاديًا:", waqf.establishmentDate),
                         LineItem("نوع الوقف:", waqf.waqfType),
                         LineItem("تصنيف الوقف:", waqf.waqfActivity),
-                        LineItem("ريع الوقف:",waqf.waqfCity+ " "+ waqf.waqfCountry),
+                        LineItem("ريع الوقف:",waqf.waqfCity+ " - "+ waqf.waqfCountry),
                         LineItem("وصف الوقف:", waqf.waqfDescription)
                     )
-
+                    initRecyclerView(items )
+                }else{
+                    showErrorLayout(response.errorBody()?.string() ?: "Fail", id)
                 }
             }
 
-            override fun onFailure(call: Call<WaqfResponse>, t: Throwable) {
+            override fun onFailure(call: Call<WaqfDetailsResponse>, t: Throwable) {
                 viewBinding.content.loadingIndicator.isVisible=false
                 showErrorLayout(t.localizedMessage as String, id)
             }
 
         })
-        initRecyclerView(items )
+
 
     }
     private fun showLoadingLayout() {

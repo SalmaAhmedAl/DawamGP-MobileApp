@@ -52,8 +52,7 @@ class HomeFragment:Fragment() {
             ) {
                  viewBinding.content.loadingIndicator.isVisible=false
                 if(response.isSuccessful){
-
-                     val awqaf = response.body()
+                    val awqaf = response.body()
                     initRecyclerView(awqaf)
 
                 }
