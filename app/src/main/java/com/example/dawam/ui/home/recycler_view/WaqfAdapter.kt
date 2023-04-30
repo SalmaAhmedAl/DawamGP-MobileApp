@@ -19,7 +19,7 @@ class WaqfAdapter(val items: ArrayList<WaqfResponse>?):RecyclerView.Adapter<Waqf
 
     var onWaqfClick: OnWaqfClick?=null
     interface OnWaqfClick{
-        fun onWaqfBtnClick(name: String )
+        fun onWaqfBtnClick(id: Int )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -28,7 +28,7 @@ class WaqfAdapter(val items: ArrayList<WaqfResponse>?):RecyclerView.Adapter<Waqf
         holder.viewBinding.founderName.text=item?.founderName
         holder.viewBinding.waqfType.text=item?.waqfActivity
       //  holder.viewBinding.image.setIm(item?.imageUrl)
-        holder.viewBinding.moreDetailsBtn.setOnClickListener {onWaqfClick?.onWaqfBtnClick(item!!.waqfName)}
+        holder.viewBinding.moreDetailsBtn.setOnClickListener {onWaqfClick?.onWaqfBtnClick(item!!.id)}
     }
 
     override fun getItemCount(): Int =items!!.size

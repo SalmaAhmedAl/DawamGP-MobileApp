@@ -2,28 +2,26 @@ package com.example.dawam.ui.waqf_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.example.dawam.R
+import com.example.dawam.api.ApiManager
+import com.example.dawam.api.model.waqfResponse.WaqfResponse
 import com.example.dawam.databinding.ActivityWaqfDetailsBinding
 import com.example.dawam.ui.Constants.WAQF_IMAGE_EXTRA
 import com.example.dawam.ui.waqf_details.recycler_view.LineItem
 import com.example.dawam.ui.waqf_details.recycler_view.WaqfDetailsAdapter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class WaqfDetailsActivity : AppCompatActivity() {
     lateinit var viewBinding: ActivityWaqfDetailsBinding
-    val items = listOf(
-        LineItem("اسم الوقف:", "جامعة القاهرة"),
-        LineItem("اسم الواقف:", "الأميرة فاطمة إسماعيل"),
-        LineItem("تاريخ الوقف هجريًا:","شعبان 1324 هجريًا"),
-        LineItem("تاريخ الوقف ميلاديًا:", "أكتوبر سنة 1906م"),
-        LineItem("نوع الوقف:", "خيري"),
-        LineItem("تصنيف الوقف:", "جامعة"),
-        LineItem("ريع الوقف:","مصر- مدينة الجيزة غرب القاهرة"),
-        LineItem("وصف الوقف:","جامعة القاهرة هي ثاني أقدم الجامعات المصرية والثالثة عربياً بعد جامعة الأزهر وجامعة القرويين تأسست كلياتها المختلفة في عهد محمد علي، كالمهندسخانة (حوالي 1820) والمدرسة الطبية عام 1827، ثم ما لبثا أن أغلقت في عهد الخديوي محمد سعيد (حوالي 1850). بعد حملة مطالبة شعبية واسعة لإنشاء جامعة حديثة بقيادة مصطفى كامل وغيره. تأسست هذه الجامعة في 21 ديسمبر 1908، عرفت باسم جامعة فؤاد الأول ثم جامعة القاهرة بعد ثورة 23 يوليو 1952.")
-        )
+
 
 
     lateinit var adapter: WaqfDetailsAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,17 +30,57 @@ class WaqfDetailsActivity : AppCompatActivity() {
         viewBinding= DataBindingUtil.setContentView(this,R.layout.activity_waqf_details)
 
         //intent
-        val waqfImage = intent.getIntExtra(WAQF_IMAGE_EXTRA, R.drawable.cairo_college)
-        viewBinding.content.image.setImageResource(waqfImage)
+        val id = intent.getIntExtra("ID",1)
 
-
+       loadWaqfDetails(id)
         initListeners()
 
-        initRecyclerView()
 
     }
+     lateinit var items:List<LineItem>
+    private fun loadWaqfDetails(id :Int){
+        ApiManager.getApis().getWaqfById(id).enqueue(object : Callback<WaqfResponse>{
+            override fun onResponse(call: Call<WaqfResponse>, response: Response<WaqfResponse>) {
+                if(response.isSuccessful){
+                    val waqf = response.body()
+                     items = listOf(
+                        LineItem("اسم الوقف:", waqf!!.waqfName),
+                        LineItem("اسم الواقف:", waqf.founderName),
+                        LineItem("تاريخ الوقف هجريًا:",waqf.establishmentDateH),
+                        LineItem("تاريخ الوقف ميلاديًا:", waqf.establishmentDate),
+                        LineItem("نوع الوقف:", waqf.waqfType),
+                        LineItem("تصنيف الوقف:", waqf.waqfActivity),
+                        LineItem("ريع الوقف:",waqf.waqfCity+ " "+ waqf.waqfCountry),
+                        LineItem("وصف الوقف:", waqf.waqfDescription)
+                    )
 
-    private fun initRecyclerView() {
+                }
+            }
+
+            override fun onFailure(call: Call<WaqfResponse>, t: Throwable) {
+                viewBinding.content.loadingIndicator.isVisible=false
+                showErrorLayout(t.localizedMessage as String, id)
+            }
+
+        })
+        initRecyclerView(items )
+
+    }
+    private fun showLoadingLayout() {
+        viewBinding.content.errorLayout.isVisible=false
+        viewBinding.content.loadingIndicator.isVisible=true
+    }
+
+    private fun showErrorLayout(errorMessage:String, id:Int) {
+        viewBinding.content.errorLayout.isVisible=true
+        viewBinding.content.loadingIndicator.isVisible=false
+        viewBinding.content.errorMessage.text= errorMessage
+        viewBinding.content.tryAgainBtn.setOnClickListener{
+            loadWaqfDetails(id)
+        }
+    }
+
+    private fun initRecyclerView(items: List<LineItem>) {
         adapter= WaqfDetailsAdapter(items)
 
          viewBinding.content.recyclerView.adapter=adapter
