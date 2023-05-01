@@ -12,7 +12,7 @@ import com.example.dawam.ui.about.about_us1.AboutUs1Fragment
 
 
 class ApplyWaqfRequestFragment : Fragment() {
-    var viewBinding: FragmentApplyWaqfRequestBinding? = null
+    lateinit var viewBinding: FragmentApplyWaqfRequestBinding
     lateinit var viewModel :ApplayWaqfRequestViewModel
 
     override fun onCreateView(
@@ -20,14 +20,18 @@ class ApplyWaqfRequestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewBinding = FragmentApplyWaqfRequestBinding.inflate(inflater, container, false)
-        return viewBinding!!.root
+        return viewBinding.root
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ApplayWaqfRequestViewModel::class.java)
-        viewBinding?.vm =viewModel
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewBinding.vm =viewModel
 
     }
 
