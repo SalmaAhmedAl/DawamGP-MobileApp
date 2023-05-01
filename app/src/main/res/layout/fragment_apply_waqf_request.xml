@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
    <data>
-
+      <variable
+          name="vm"
+          type="com.example.dawam.ui.apply_waqf.ApplayWaqfRequestViewModel" />
    </data>
 
    <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -53,7 +55,9 @@
 
       <include
           layout="@layout/content_apply_waqf_request_fragment"
-          android:id="@+id/content" />
+          android:id="@+id/content"
+          app:vm="@{vm}"
+          />
 
    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
