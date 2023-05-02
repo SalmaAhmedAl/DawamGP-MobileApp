@@ -20,8 +20,6 @@ import retrofit2.Response
 class WaqfDetailsActivity : AppCompatActivity() {
     lateinit var viewBinding: ActivityWaqfDetailsBinding
 
-
-
     lateinit var adapter: WaqfDetailsAdapter
 
 
