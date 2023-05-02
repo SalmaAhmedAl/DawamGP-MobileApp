@@ -22,7 +22,6 @@ class WaqfDetailsActivity : AppCompatActivity() {
 
     lateinit var adapter: WaqfDetailsAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        viewBinding= ActivityWaqfDetailsBinding.inflate(layoutInflater)
@@ -53,7 +52,7 @@ class WaqfDetailsActivity : AppCompatActivity() {
                         LineItem("نوع الوقف:", waqf.waqfType),
                         LineItem("تصنيف الوقف:", waqf.waqfActivity),
                         LineItem("ريع الوقف:",waqf.waqfCity+ " - "+ waqf.waqfCountry),
-                        LineItem("وصف الوقف:", waqf.waqfDescription)
+                        LineItem("وصف الوقف:", waqf.waqfDescription),
                     )
                     initRecyclerView(items )
                     Glide.with(this@WaqfDetailsActivity)

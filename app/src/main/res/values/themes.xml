@@ -29,11 +29,13 @@
         <item name="fontFamily">@font/cairo</item>
         <item name="android:textSize">16sp</item>
     </style>
+
     <style name="transation_section">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/brown</item>
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="about_us_description">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black</item>
@@ -42,6 +44,15 @@
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginStart">8dp</item>
     </style>
+
+    <style name="Theme.DAWAM.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DAWAM.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DAWAM.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
