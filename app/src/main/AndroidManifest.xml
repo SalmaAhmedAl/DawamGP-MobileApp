@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".WebviewActivity"
+            android:name=".ui.waqf_details.WebviewActivity"
             android:exported="false"
             android:label="@string/title_activity_webview"
             android:theme="@style/Theme.DAWAM.NoActionBar">

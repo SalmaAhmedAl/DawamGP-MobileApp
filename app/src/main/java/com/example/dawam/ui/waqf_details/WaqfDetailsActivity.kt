@@ -1,5 +1,6 @@
 package com.example.dawam.ui.waqf_details
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
@@ -42,6 +43,7 @@ class WaqfDetailsActivity : AppCompatActivity() {
                 if(response.isSuccessful){
 
                     val waqf = response.body()
+                   val pdfUrl ="http://afdinc-001-site5.itempurl.com/"+ waqf!!.documentUrl
                     viewBinding.title.text= waqf!!.waqfName
 
                     val  items = listOf(
@@ -59,6 +61,12 @@ class WaqfDetailsActivity : AppCompatActivity() {
                         .load("http://afdinc-001-site5.itempurl.com/"+waqf.imageUrl)
                         .override(360, 250)
                         .into(viewBinding.content.image);
+
+                    viewBinding.content.showPdfBtn.setOnClickListener{
+                        val intent = Intent(this@WaqfDetailsActivity, WebviewActivity::class.java)
+                        intent.putExtra("pdf_url", pdfUrl )
+                        startActivity(intent)
+                    }
                 }else{
                     showErrorLayout(response.errorBody()?.string() ?: "Fail", id)
                 }
@@ -102,6 +110,7 @@ class WaqfDetailsActivity : AppCompatActivity() {
             backBtn.setOnClickListener{
                 finish()
             }
+
         }
     }
 }

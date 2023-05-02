@@ -80,7 +80,7 @@
             android:id="@+id/show_pdf_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="عرض وثيقة العقد"
+            android:text="عرض وثيقة الوقف"
             android:backgroundTint="@color/brown2"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
