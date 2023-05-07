@@ -16,9 +16,10 @@ class ApplayWaqfRequestViewModel: ViewModel() {
     val waqfDiscreptionError = ObservableField<String?>()
     val goodReturnFromTheWaqf = ObservableField<String>()
     val goodReturnFromTheWaqfError = ObservableField<String?>()
+    var navigator : Navigator? = null
     fun register() {
-        if(!validate())
-            return
+        if(!validate()) return
+        navigator?.showMessage("تمت العملية بنجاح")
     }
     fun validate():Boolean{
         var isValid= true
