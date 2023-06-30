@@ -11,14 +11,15 @@ import com.example.dawam.ui.about.AboutUsFragment
 import com.example.dawam.ui.contact_us.ContactUsFragment
 import com.example.dawam.ui.apply_waqf.ApplyWaqfRequestFragment
 import com.google.android.material.navigation.NavigationBarView
+import java.util.*
 
 class HomeActivity : AppCompatActivity() {
     lateinit var viewBinding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
-//        setContentView(viewBinding.root)
+        // Set app language to Arabic
+        Locale.setDefault(Locale("ar"))
         viewBinding=DataBindingUtil.setContentView(this,R.layout.activity_home)
         initBottomNav()
     }

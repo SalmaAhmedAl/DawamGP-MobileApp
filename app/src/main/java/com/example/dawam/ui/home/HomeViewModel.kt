@@ -5,8 +5,4 @@ import com.example.dawam.api.ApiManager
 
 class HomeViewModel: ViewModel() {
 
-
-
-
-
 }

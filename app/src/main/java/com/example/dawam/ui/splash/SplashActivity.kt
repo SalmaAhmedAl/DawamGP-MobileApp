@@ -9,13 +9,14 @@ import androidx.databinding.DataBindingUtil
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivitySplashBinding
 import com.example.dawam.ui.home.HomeActivity
+import java.util.*
 
 class SplashActivity : AppCompatActivity() {
     lateinit var viewBinding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        viewBinding = ActivitySplashBinding.inflate(layoutInflater)
-//        setContentView(viewBinding.root)
+        // Set app language to Arabic
+        Locale.setDefault(Locale("ar"))
         viewBinding= DataBindingUtil.setContentView(this,R.layout.activity_splash)
         with(viewBinding.logo) {
             alpha=0f

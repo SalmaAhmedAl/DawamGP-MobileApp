@@ -19,8 +19,6 @@ class WebviewActivity : AppCompatActivity() {
         viewBinding.web.settings.setSupportZoom(true)
         viewBinding.web.settings.javaScriptEnabled=true
         val pdfUrl =intent.getStringExtra("pdf_url")
-            //"http://afdinc-001-site5.itempurl.com//waqfDocuments/0mawlawy.pdf"
-            //
         viewBinding.web.loadUrl("https://docs.google.com/gview?embedded=true&url=${pdfUrl}")
     }
 }

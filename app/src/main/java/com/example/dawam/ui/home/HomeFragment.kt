@@ -56,9 +56,7 @@ class HomeFragment:Fragment() {
                     initRecyclerView(awqaf)
 
                 }
-
             }
-
             override fun onFailure(call: Call<ArrayList<WaqfResponse>>, t: Throwable) {
                 viewBinding.content.loadingIndicator.isVisible=false
                 showErrorLayout(t.localizedMessage as String)
