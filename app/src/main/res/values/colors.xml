@@ -13,6 +13,6 @@
     <color name="shade_of_green2">#F0F2E1</color>
     <color name="black30">#303030</color>
     <color name="blueBlack">#42505C</color>
-    <color name="gray">#707070</color>
+    <color name="gray">#e9ecef</color>
     <color name="transperant">#00000000</color>
 </resources>

@@ -44,7 +44,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         android:text="من نحن؟"
                         android:textSize="22sp"
-                        android:textColor="@color/blueBlack"
+                        android:textColor="@color/golden"
                         android:fontFamily="@font/cairo" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.appcompat.widget.Toolbar>
