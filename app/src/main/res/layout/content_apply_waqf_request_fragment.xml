@@ -31,8 +31,8 @@
             app:layout_constraintBottom_toTopOf="@id/linear"
             android:fontFamily="@font/cairo_semi_bold"
             android:textSize="16sp"
-            android:textColor="@color/brown"
-            android:text="من فضلك املئ بيانات الوقف بدقة و تركيز" />
+            android:textColor="@color/green"
+            android:text="@string/please_fill_in_the_waqf_information_accurately_and_carefully" />
 
 
         <LinearLayout
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:id="@+id/user_name"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:id="@+id/email"
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:id="@+id/password"
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:layout_width="match_parent"
@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:boxBackgroundColor="@color/transperant">
+                app:boxBackgroundColor="@color/transparent">
 
                 <EditText
                     android:id="@+id/confirm"
@@ -147,11 +147,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/waqf_rounded"
+                android:background="@drawable/btn_rounded"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="8dp"
-                android:text="تقديم طلب لإضافة وقف"
-                android:textColor="@color/brown"
+                android:text="@string/request_to_add_waqf"
+                android:textColor="@color/white"
                 android:layout_marginTop="32dp"
                 android:textSize="18sp"
                 android:textStyle="bold"

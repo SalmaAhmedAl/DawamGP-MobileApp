@@ -28,6 +28,7 @@
             android:layout_margin="6dp"
             android:background="@drawable/nav_rounded"
             app:itemIconTint="@drawable/bottom_navigation_item_selected"
+            app:itemTextColor="@drawable/bottom_navigation_item_selected"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

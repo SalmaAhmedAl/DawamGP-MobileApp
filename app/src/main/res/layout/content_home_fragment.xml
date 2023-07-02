@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="@string/awqaf"
             android:textSize="22sp"
-            android:textColor="@color/golden"
+            android:textColor="@color/gold"
             android:fontFamily="@font/cairo"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,7 +63,7 @@
                 tools:text="This error message"
                 android:fontFamily="@font/cairo_semi_bold"
                 android:textSize="18sp"
-                android:textColor="@color/blueBlack"/>
+                android:textColor="@color/black"/>
             <Button
                 android:id="@+id/try_again_btn"
                 android:layout_width="wrap_content"

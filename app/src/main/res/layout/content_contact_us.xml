@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/contactUsRecycler"
             style="@style/contact_us_title"
-            android:text="@string/contactUsToMoreInformation" />
+            android:text="@string/followUsForMoreInformation" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/contactUsRecycler"

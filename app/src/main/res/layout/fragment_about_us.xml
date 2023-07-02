@@ -28,10 +28,10 @@
                     <ImageView
                         android:id="@+id/logo"
                         android:layout_width="65dp"
-                        android:layout_height="0dp"
+                        android:layout_height="45dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ic_dawam_logo"
+                        android:src="@drawable/ic_dawam"
                         app:layout_constraintTop_toTopOf="@id/title"
                         app:layout_constraintBottom_toBottomOf="@id/title" />
 
@@ -42,9 +42,9 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:text="من نحن؟"
+                        android:text="@string/about_us_title_page"
                         android:textSize="22sp"
-                        android:textColor="@color/golden"
+                        android:textColor="@color/green"
                         android:fontFamily="@font/cairo" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.appcompat.widget.Toolbar>

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
-    <color name="brown">#005B4B</color>
-    <color name="brown2">#A97949</color>
-    <color name="brown3">#ECDDC3</color>
-    <color name="brown4">#F2EEE5</color>
-    <color name="golden">#005B4B</color>
-    <color name="shade_of_green">#E2E7CE</color>
-    <color name="shade_of_green2">#F0F2E1</color>
-    <color name="black30">#303030</color>
-    <color name="blueBlack">#42505C</color>
+    <color name="black">#303030</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#005B4B</color>
+    <color name="green2">#298F60</color>
+    <color name="green3">#558D60</color>
     <color name="gray">#e9ecef</color>
-    <color name="transperant">#00000000</color>
+    <color name="gray_dark">#717578</color>
+    <color name="off_white">#FFEDCB</color>
+    <color name="gold">#D3A355</color>
+    <color name="brown">#997023</color>
+
+
+
+
+
+
 </resources>

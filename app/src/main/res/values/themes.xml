@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.DAWAM" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/brown</item>
-        <item name="colorPrimaryVariant">@color/brown</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/brown</item>
+        <item name="colorSecondary">@color/green</item>
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
@@ -32,7 +32,7 @@
 
     <style name="transation_section">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/brown</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:textSize">12sp</item>
     </style>
 

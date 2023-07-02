@@ -52,14 +52,14 @@
 
                     <ImageView
                         android:id="@+id/logo"
-                        android:layout_width="40dp"
-                        android:layout_height="0dp"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
                         app:layout_constraintStart_toEndOf="@id/materialCardView"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:scaleType="fitCenter"
                         app:layout_constraintTop_toTopOf="@id/materialCardView"
-                        android:src="@drawable/ic_dawam_logo" />
+                        android:src="@drawable/ic_dawam" />
 
                     <TextView
                         android:id="@+id/title"
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/dawam"
                         android:textSize="20sp"
-                        android:textColor="@color/golden"
+                        android:textColor="@color/gold"
                         android:fontFamily="@font/cairo_semi_bold"
                         app:layout_constraintEnd_toEndOf="@id/info"
                         app:layout_constraintTop_toBottomOf="@id/materialCardView"
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/dawam_info"
                         android:textSize="16sp"
-                        android:textColor="@color/blueBlack"
+                        android:textColor="@color/black"
                         android:fontFamily="@font/cairo"
                         app:layout_constraintTop_toBottomOf="@id/title"
                         android:layout_marginHorizontal="16dp"

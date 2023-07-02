@@ -7,7 +7,7 @@
 
     <string name="dawam">دوام</string>
     <string name="awqaf">الأوقاف</string>
-    <string name="contactUsToMoreInformation">تابعنا لمعرفة المزيد من المعلومات</string>
+    <string name="followUsForMoreInformation">تابعنا لتحصل على المزيد من المعلومات</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_us_text1">عبر العهود الإسلامية أنشأت أوقاف خلدها التاريخ حققت مقاصدها عبر العصوروما خطه الرحالة وكاتبي السير أرشدنا إلى روائع لم تكن بالحسبان ففي أوج حضارتنا خصص وقف لكل حاجة ومطلب وكان لنا وراء كل وقف قصة يدلنا عليها الواقف والدافع والجهة الموقوف عليها والوقف ووثيقة الوقف وغيره</string>
@@ -25,4 +25,10 @@
     <string name="home">Home</string>
     <string name="previous">السابق</string>
     <string name="next">التالي</string>
+   <string name="quran">مصحف</string>
+   <string name="person_name">اسم الواقف:</string>
+    <string name="read_more">المزيد من التفاصيل</string>
+    <string name="request_to_add_waqf">طلب تقديم وقف جديد</string>
+    <string name="about_us_title_page">من نحن وماذا نفعل؟</string>
+    <string name="contact_us_title_page">تواصل مع فريقنا</string>
 </resources>

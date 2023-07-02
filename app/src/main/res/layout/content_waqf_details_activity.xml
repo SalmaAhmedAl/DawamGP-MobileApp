@@ -39,7 +39,7 @@
                 tools:text="This error message"
                 android:fontFamily="@font/cairo_semi_bold"
                 android:textSize="18sp"
-                android:textColor="@color/blueBlack"/>
+                android:textColor="@color/black"/>
             <Button
                 android:id="@+id/try_again_btn"
                 android:layout_width="wrap_content"
