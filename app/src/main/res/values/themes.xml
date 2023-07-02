@@ -17,7 +17,7 @@
 
     <style name="contact_us_title">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/green</item>
         <item name="fontFamily">@font/cairo</item>
         <item name="android:textSize">20sp</item>
     </style>
