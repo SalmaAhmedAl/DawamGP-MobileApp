@@ -31,7 +31,7 @@
             app:layout_constraintBottom_toTopOf="@id/linear"
             android:fontFamily="@font/cairo_semi_bold"
             android:textSize="16sp"
-            android:textColor="@color/brown2"
+            android:textColor="@color/brown"
             android:text="من فضلك املئ بيانات الوقف بدقة و تركيز" />
 
 
@@ -45,21 +45,21 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/user_name_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:boxBackgroundColor="@color/transperant">
-
-            <EditText
-                android:id="@+id/user_name"
+                android:id="@+id/user_name_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/waqf_name"
-                android:text="@={vm.waqfName}"
-                error="@{vm.waqfNameError}"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="@color/transperant">
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/waqf_name"
+                    android:text="@={vm.waqfName}"
+                    error="@{vm.waqfNameError}"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_layout"

@@ -65,7 +65,7 @@
                 android:maxLines="2"
                 android:textColor="@color/black30"
                 android:textSize="12sp"
-                 />
+                />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -47,7 +47,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         android:text="جامعة القاهرة"
                         android:textSize="22sp"
-                        android:textColor="@color/blueBlack"
+                        android:textColor="@color/golden"
                         android:fontFamily="@font/cairo" />
 
                     <ImageButton

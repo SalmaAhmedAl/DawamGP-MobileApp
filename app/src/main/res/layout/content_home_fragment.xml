@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="@string/awqaf"
             android:textSize="22sp"
-            android:textColor="@color/brown2"
+            android:textColor="@color/golden"
             android:fontFamily="@font/cairo"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/awqaf" />
+            app:layout_constraintTop_toBottomOf="@id/awqaf"
+            />
 
         <ProgressBar
             android:id="@+id/loading_indicator"
