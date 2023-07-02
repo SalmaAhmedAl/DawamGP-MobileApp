@@ -31,10 +31,10 @@
                     <ImageView
                         android:id="@+id/logo"
                         android:layout_width="65dp"
-                        android:layout_height="0dp"
+                        android:layout_height="45dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ic_dawam_logo"
+                        android:src="@drawable/ic_dawam"
                         app:layout_constraintTop_toTopOf="@id/title"
                         app:layout_constraintBottom_toBottomOf="@id/title" />
 
@@ -47,7 +47,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         android:text="جامعة القاهرة"
                         android:textSize="22sp"
-                        android:textColor="@color/green"
+                        android:textColor="@color/gold"
                         android:fontFamily="@font/cairo" />
 
                     <ImageButton

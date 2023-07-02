@@ -147,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/btn_rounded"
+                android:background="@drawable/btn_rounded_green"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="8dp"
                 android:text="@string/request_to_add_waqf"
