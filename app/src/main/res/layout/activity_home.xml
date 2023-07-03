@@ -16,24 +16,36 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+            app:layout_constraintBottom_toTopOf="@id/frame_bottom_nav"
             app:layout_constraintTop_toTopOf="parent"
 
             />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:background="@drawable/nav_rounded"
-            app:itemIconTint="@drawable/bottom_navigation_item_selected"
-            app:itemTextColor="@drawable/bottom_navigation_item_selected"
+        <FrameLayout
+            android:id="@+id/frame_bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_navigation"
-            tools:listitem="@layout/item_waqf_home" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom">
+
+            <!-- Your bottom navigation view -->
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/nav_rounded"
+                app:itemIconTint="@drawable/bottom_navigation_item_selected"
+                app:itemTextColor="@drawable/bottom_navigation_item_selected"
+                app:menu="@menu/bottom_navigation"
+                android:layout_gravity="bottom"
+
+                tools:listitem="@layout/item_waqf_home" />
+
+        </FrameLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

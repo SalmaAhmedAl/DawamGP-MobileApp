@@ -9,4 +9,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="please_fill_in_the_waqf_information_accurately_and_carefully">من فضلك املئ بيانات الوقف بدقة وتركيز</string>
     <string name="viewing_the_legal_document">الاطلاع على الوثيقة القانونية</string>
+    <string name="waqf_date_H">تاريخ الوقف هجريًا</string>
+    <string name="choose_city">اختر المدينة</string>
 </resources>
