@@ -29,4 +29,6 @@ interface WebServices {
 
     @GET("api/City/{id}")
     fun getCities(@Path(value ="id") id:Int): Call<ArrayList<WaqfCitiesResponse>>
+    @GET("/api/Waqf/Search/{search}")
+    fun getSearch(@Path(value ="search") search:String): Call<ArrayList<WaqfResponse>>
 }
