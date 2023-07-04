@@ -35,7 +35,7 @@
                    app:layout_constraintTop_toTopOf="parent"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
-                   android:text="@string/request_to_add_waqf"
+                   android:text="@string/request_for_new_waqf"
                    android:textSize="22sp"
                    android:textColor="@color/gold"
                    android:fontFamily="@font/cairo" />

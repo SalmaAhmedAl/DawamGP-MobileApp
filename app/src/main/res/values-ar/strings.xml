@@ -37,4 +37,5 @@
     <string name="waqf_date_H">تاريخ الوقف هجريًا</string>
     <string name="choose_city">اختر المدينة</string>
     <string name="try_again">حاول مجدداً</string>
+    <string name="request_for_new_waqf">طلب تقديم وقف جديد</string>
 </resources>

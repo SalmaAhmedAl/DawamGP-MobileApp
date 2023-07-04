@@ -11,10 +11,10 @@
     <string name="cairoUniversity">Cairo University</string>
     <string name="app_name">DAWAM</string>
     <string name="search">search</string>
-    <string name="dawam_info">It is a decentralized way of storing authenticated Awqaaf in an immutable and tamper-proof manner across the ages, using blockchain technology</string>
+    <string name="dawam_info">هو وسيلة لحفظ الأوقاف الموثقة بشكل غير قابل للتغير أو التلف عبر مر العصور بصورة لامركزية باستخدام تقنية البلوكتشين.</string>
 
-    <string name="dawam">DAWAM</string>
-    <string name="awqaf">Awqaf</string>
+    <string name="dawam">دوام</string>
+    <string name="awqaf">الأوقاف</string>
     <string name="followUsForMoreInformation">Follow us to get more information</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
@@ -22,7 +22,7 @@
     <string name="about_us_text3">وهنا يأتي دور دوام لحماية هذه الحجج (الوثائق) حتى لا تؤول مآل اخواتها المفقودة جراء تغيير الظروف حيث يتم في دوام تخليد الأوقاف و حفظها للأبد على شبكة Ethereum القائمة على تقنية ال Blockchain و ذلك من خلال استخدام العقود الذكية و الرموز غير القابلة للاستبدال (NFTs) لتشفير الحجج الوقفية وبالتالي ضمان حماية الأوقاف من التغيير أو التلف أو الفقد.</string>
     <string name="about_us_text2" translatable="false"> </string>
     <string name="waqf_name">Waqf name</string>
-    <string name="name_of_the_owner_of_the_waqf">Name of the founder</string>
+    <string name="name_of_the_owner_of_the_waqf">Founder name</string>
     <string name="waqf_date">Date</string>
     <string name="waqf_type">نوع الوقف</string>
     <string name="waqf_description">Waqf description</string>
@@ -49,4 +49,5 @@
     <string name="add">Add</string>
     <string name="try_again">Try again</string>
     <string name="waqfNameInHome" translatable="false">اسم الوقف</string>
+    <string name="request_for_new_waqf">Request for new waqf</string>
 </resources>
