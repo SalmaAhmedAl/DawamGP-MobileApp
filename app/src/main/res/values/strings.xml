@@ -11,7 +11,7 @@
     <string name="cairoUniversity">Cairo University</string>
     <string name="app_name">DAWAM</string>
     <string name="search">search</string>
-    <string name="dawam_info">It is a means of preserving documented endowments in a way that cannot be changed or damaged throughout the ages  Decentralized using blockchain technology.</string>
+    <string name="dawam_info">It is a decentralized way of storing authenticated Awqaaf in an immutable and tamper-proof manner across the ages, using blockchain technology</string>
 
     <string name="dawam">DAWAM</string>
     <string name="awqaf">Awqaf</string>
@@ -22,9 +22,9 @@
     <string name="about_us_text3">وهنا يأتي دور دوام لحماية هذه الحجج (الوثائق) حتى لا تؤول مآل اخواتها المفقودة جراء تغيير الظروف حيث يتم في دوام تخليد الأوقاف و حفظها للأبد على شبكة Ethereum القائمة على تقنية ال Blockchain و ذلك من خلال استخدام العقود الذكية و الرموز غير القابلة للاستبدال (NFTs) لتشفير الحجج الوقفية وبالتالي ضمان حماية الأوقاف من التغيير أو التلف أو الفقد.</string>
     <string name="about_us_text2" translatable="false"> </string>
     <string name="waqf_name">Waqf name</string>
-    <string name="name_of_the_owner_of_the_waqf">Name of the endower</string>
-    <string name="waqf_date">Date / Calender </string>
-    <string name="waqf_type">Type of waqf</string>
+    <string name="name_of_the_owner_of_the_waqf">Name of the founder</string>
+    <string name="waqf_date">Date</string>
+    <string name="waqf_type">نوع الوقف</string>
     <string name="waqf_description">Waqf description</string>
     <string name="the_good_return_from_the_waqf">Revenue of the waqf</string>
     <string name="apply">Apply</string>
@@ -34,18 +34,19 @@
     <string name="previous">previous</string>
     <string name="next">next</string>
     <string name="quran">quran</string>
-    <string name="person_name">Name of the founder</string>
+    <string name="person_name">اسم الواقف</string>
     <string name="read_more">Read more</string>
     <string name="viewing_the_legal_document">View the legal document</string>
-    <string name="request_to_add_waqf">Request for New waqf</string>
+    <string name="request_to_add_waqf">send waqf request</string>
     <string name="about_us_title_page">Who are we and what do we do?</string>
     <string name="contact_us_title_page">Get in touch with our team</string>
-    <string name="waqf_date_H">Islamic/ Hijri Date / Calender</string>
+    <string name="waqf_date_H">Islamic Date</string>
     <string name="choose_city">Select the city</string>
     <string name="waqfActivity">"Waqf activity: "</string>
-    <string name="choose_waqf_country">Choose the Waqf revenue</string>
+    <string name="choose_waqf_country">Select the country</string>
     <string name="choose_waqf_activity">Choose the Waqf activity</string>
     <string name="choose_waqf_type">Choose the type of Waqf</string>
     <string name="add">Add</string>
     <string name="try_again">Try again</string>
+    <string name="waqfNameInHome" translatable="false">اسم الوقف</string>
 </resources>

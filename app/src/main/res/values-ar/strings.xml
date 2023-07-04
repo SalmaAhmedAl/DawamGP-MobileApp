@@ -31,7 +31,7 @@
     <string name="about_us_title_page">من نحن وماذا نفعل؟</string>
     <string name="contact_us_title_page">تواصل مع فريقنا</string>
     <string name="waqfActivity">"نشاط الوقف: "</string>
-    <string name="choose_waqf_country">اختر ريع الوقف</string>
+    <string name="choose_waqf_country">اختر البلد</string>
     <string name="choose_waqf_activity">اختر نشاط الوقف</string>
     <string name="choose_waqf_type">اختر نوع الوقف</string>
     <string name="waqf_date_H">تاريخ الوقف هجريًا</string>

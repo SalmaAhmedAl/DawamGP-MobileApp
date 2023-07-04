@@ -24,14 +24,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent=".01" />
+
         <ScrollView
             android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-             >
-
+            app:layout_constraintVertical_bias="0.091"
+            tools:layout_editor_absoluteX="١٢dp">
 
 
             <LinearLayout
@@ -44,14 +45,14 @@
 
                 <TextView
                     android:id="@+id/note"
-                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
                     android:fontFamily="@font/cairo_semi_bold"
                     android:text="@string/please_fill_in_the_waqf_information_accurately_and_carefully"
                     android:textColor="@color/green"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/waqf_name_layout"
                     android:layout_width="match_parent"
@@ -135,11 +136,11 @@
                     >
 
                     <AutoCompleteTextView
+                        error="@{vm.waqfActivityError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:text="@{vm.waqfActivity}"
-                        error="@{vm.waqfActivityError}"
 
                         />
 
@@ -157,11 +158,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/note">
 
                     <AutoCompleteTextView
+                        error="@{vm.waqfCountryError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:text="@{vm.waqfCountry}"
-                        error="@{vm.waqfCountryError}"/>
+                        android:text="@{vm.waqfCountry}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -177,11 +178,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/note">
 
                     <AutoCompleteTextView
+                        error="@{vm.waqfCityError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:text="@{vm.waqfCity}"
-                        error="@{vm.waqfCityError}"/>
+                        android:text="@{vm.waqfCity}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -197,11 +198,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/note">
 
                     <AutoCompleteTextView
+                        error="@{vm.waqfTypeError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:text="@{vm.waqfType}"
-                        error="@{vm.waqfTypeError}"/>
+                        android:text="@{vm.waqfType}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
