@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.ScaleAnimation
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -60,6 +62,15 @@ class HomeFragment:Fragment() {
             }
         }
         )
+        var textView =viewBinding.title
+        val anim = ScaleAnimation(
+            0f, 1f, // Start and end values for the X axis scaling
+            0f, 1f, // Start and end values for the Y axis scaling
+            Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
+            Animation.RELATIVE_TO_SELF, 0.5f // Pivot point of Y scaling
+        )
+        anim.duration = 500
+        textView.startAnimation(anim)
         }
 
     private fun searchWaqf(query: String) {
