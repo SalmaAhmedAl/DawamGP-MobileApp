@@ -27,7 +27,7 @@
     <string name="person_name">اسم الواقف</string>
     <string name="read_more">المزيد من التفاصيل</string>
     <string name="viewing_the_legal_document">عرض الوثيقة القانونية</string>
-    <string name="request_to_add_waqf">طلب تقديم وقف جديد</string>
+    <string name="request_to_add_waqf">ارسال</string>
     <string name="about_us_title_page">من نحن وماذا نفعل؟</string>
     <string name="contact_us_title_page">تواصل مع فريقنا</string>
     <string name="waqfActivity">"نشاط الوقف: "</string>
