@@ -1,15 +1,12 @@
 package com.example.dawam.ui.apply_waqf
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.databinding.BindingAdapter
-import com.google.android.material.textfield.TextInputLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dawam.api.ApiManager
@@ -19,10 +16,9 @@ import com.example.dawam.databinding.FragmentApplyWaqfRequestBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
-import com.example.dawam.api.model.Waqf
-import com.example.dawam.api.model.addWaqfRequest.addWaqfRequest
+import com.example.dawam.api.model.WaqfRequest
+import com.example.dawam.api.model.waqfRequestResponse.WaqfRequestResponse
 import com.example.dawam.api.model.waqfCitiesResponse.WaqfCitiesResponse
 import com.example.dawam.api.model.waqfTypesResponse.WaqfTypesResponse
 import java.time.LocalDate
@@ -30,18 +26,17 @@ import java.time.format.DateTimeFormatter
 
 
 class ApplyWaqfRequestFragment : Fragment() {
-    lateinit var viewBinding: FragmentApplyWaqfRequestBinding
-    lateinit var viewModel :ApplyWaqfRequestViewModel
+    private lateinit var viewBinding: FragmentApplyWaqfRequestBinding
+    private lateinit var viewModel :ApplyWaqfRequestViewModel
     private lateinit var adapterActivities: ArrayAdapter<String>
     private lateinit var adapterCountries: ArrayAdapter<String>
     private lateinit var adapterCities: ArrayAdapter<String>
     private lateinit var adapterTypes: ArrayAdapter<String>
-    val waqfImage ="http://afdinc-001-site5.itempurl.com/waqfImages/0WhatsAppImage2023-04-10at2.42.26AM.jpeg"
-    val waqfDocument ="http://afdinc-001-site5.itempurl.com/waqfDocuments/0AI_Groups.pdf"
-    val insUserId ="1"
-    val documentNumber =8
-
-
+    private val waqfImage ="http://afdinc-001-site5.itempurl.com/waqfImages/0WhatsAppImage2023-04-10at2.42.26AM.jpeg"
+    private val waqfDocument ="http://afdinc-001-site5.itempurl.com/waqfDocuments/0AI_Groups.pdf"
+    private val insUserId ="1"
+    private val documentNumber =8
+    val waqfRequest = WaqfRequest()
 
 
 
@@ -50,6 +45,8 @@ class ApplyWaqfRequestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewBinding = FragmentApplyWaqfRequestBinding.inflate(inflater, container, false)
+
+
         return viewBinding.root
     }
 
@@ -60,20 +57,22 @@ class ApplyWaqfRequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.vm =viewModel
+        viewBinding.vm = viewModel
+        viewBinding.content.addBtn.setOnClickListener {
+           val f= viewModel.register()
+            if(f){
+                sendDataToApi()
+            }
 
+        }
         loadWaqfActivitiesDropdown()
         loadCountriesDropdown()
         //(viewBinding.content.waqfCities.editText as? AutoCompleteTextView)?.isEnabled=false
         loadCitiesDropdown(1)
         loadTypesDropdown()
-        viewBinding.content.register.setOnClickListener{
-           // postWaqfRequest()
-        }
-        // loadInputData()
     }
 
-    private fun loadInputData() {
+    private fun sendDataToApi() {
         val waqfName = viewBinding.content.waqfNameEt.text.toString()
         val founderName =viewBinding.content.personNameEt.text.toString()
         val establishmentDate = viewBinding.content.waqfDateEt.text.toString()
@@ -88,17 +87,38 @@ class ApplyWaqfRequestFragment : Fragment() {
         val dateH = LocalDate.parse(establishmentDateH, formatter)
         val isoFormatterH = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
         val establishmentDateFormatedH = isoFormatterH.format(dateH.atStartOfDay())
-        val waqf = Waqf()
-        waqf.waqfName =waqfName
-        waqf.founderName=founderName
-        waqf.documentNumber=documentNumber
-        waqf.establishmentDate=establishmentDateFormated
-        waqf.establishmentDateH=establishmentDateFormatedH
-        waqf.waqfDescription=waqfDescription
-        waqf.waqfDocument=waqfDocument
-        waqf.imageUrl=waqfImage
-        waqf.insUserId=insUserId
+        waqfRequest.waqfName =waqfName
+        waqfRequest.founderName=founderName
+        waqfRequest.documentNumber=documentNumber
+        waqfRequest.establishmentDate=establishmentDateFormated
+        waqfRequest.establishmentDateH=establishmentDateFormatedH
+        waqfRequest.waqfDescription=waqfDescription
+        waqfRequest.waqfDocument=waqfDocument
+        waqfRequest.imageUrl=waqfImage
+        waqfRequest.insUserId=insUserId
+
+        ApiManager.getApis().sendWaqfRequest(waqfRequest).enqueue(object : Callback<WaqfRequestResponse> {
+            override fun onResponse(
+                call: Call<WaqfRequestResponse>,
+                response: Response<WaqfRequestResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val res = response.body()
+                    Log.e("onResponse: result is ", res.toString())
+                } else {
+                    val errorCode = response.code()
+                    val errorMessage = response.message()
+
+                }
+            }
+
+            override fun onFailure(p0: Call<WaqfRequestResponse>, p1: Throwable) {
+                p1.localizedMessage?.let { Log.e("onFailure: false", it) }
+            }
+        })
+
     }
+
 
 
 
@@ -109,7 +129,7 @@ class ApplyWaqfRequestFragment : Fragment() {
         fetchActivityItems()
     }
     private fun  fetchActivityItems() {
-        //get Waqf Activities
+        //get WaqfRequest Activities
         ApiManager.getApis().getWaqfActivities()
             .enqueue(object : Callback<ArrayList<WaqfActivitiesResponse>> {
                 override fun onResponse(
@@ -126,8 +146,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
                                 val activity= waqfActivitiesList.get(position)
-                                val wActivity = Waqf()
-                                wActivity.waqfActivityId = activity.id
+                                waqfRequest.waqfActivityId = activity.id
                             }}
                     } else {
                         // Handle the error
@@ -168,8 +187,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
                                val country= countriesList.get(position)
-                                val wCountry = Waqf()
-                                wCountry.waqfCountryId = country.id
+                                waqfRequest.waqfCountryId = country.id
                             }
 
                         }
@@ -210,8 +228,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
                                 val city= citiesList.get(position)
-                                val wCity = Waqf()
-                                wCity.waqfCityId = city.id
+                                waqfRequest.waqfCityId = city.id
                             }
                     } }
                     else {
@@ -249,8 +266,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
                                 val type= typesList.get(position)
-                                val wType = Waqf()
-                                wType.waqfTypeId = type.id
+                                waqfRequest.waqfTypeId = type.id
                             }
                         } }
 

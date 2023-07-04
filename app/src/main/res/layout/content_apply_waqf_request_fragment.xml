@@ -224,13 +224,12 @@
 
 
                 <Button
-                    android:id="@+id/register"
+                    android:id="@+id/addBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/btn_rounded_green"
-                    android:onClick="@{()->vm.register()}"
                     android:paddingHorizontal="32dp"
                     android:paddingVertical="8dp"
                     android:text="@string/request_to_add_waqf"

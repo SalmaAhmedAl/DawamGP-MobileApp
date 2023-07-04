@@ -1,15 +1,18 @@
 package com.example.dawam.api
 
+import com.example.dawam.api.model.WaqfRequest
 import com.example.dawam.api.model.waqfActivitiesResponse.WaqfActivitiesResponse
 import com.example.dawam.api.model.waqfCitiesResponse.WaqfCitiesResponse
 import com.example.dawam.api.model.waqfCountriesResponse.WaqfCountriesResponse
+import com.example.dawam.api.model.waqfRequestResponse.WaqfRequestResponse
 import com.example.dawam.api.model.waqfResponse.WaqfResponse
 import com.example.dawam.api.model.waqfTypesResponse.WaqfTypesResponse
 import com.example.dawam.api.model.wqfDetailsResponse.WaqfDetailsResponse
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface WebServices {
     @GET("api/Waqf")
@@ -29,6 +32,10 @@ interface WebServices {
 
     @GET("api/City/{id}")
     fun getCities(@Path(value ="id") id:Int): Call<ArrayList<WaqfCitiesResponse>>
+
     @GET("/api/Waqf/Search/{search}")
     fun getSearch(@Path(value ="search") search:String): Call<ArrayList<WaqfResponse>>
+
+    @POST("api/Waqf")
+    fun sendWaqfRequest(@Body waqfRequest: WaqfRequest): Call<WaqfRequestResponse>
 }

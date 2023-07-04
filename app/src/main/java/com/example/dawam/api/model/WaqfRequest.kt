@@ -1,6 +1,6 @@
 package com.example.dawam.api.model
 
-public class Waqf {
+public class WaqfRequest {
     var waqfName: String = ""
         set(value) {
             field = value
@@ -11,17 +11,17 @@ public class Waqf {
             field = value
         }
 
-    var documentNumber: Int = 0
+    var documentNumber: Int = 7
         set(value) {
             field = value
         }
 
-    var establishmentDate: String = ""
+    var establishmentDate: String = "2000-12-02T00:00:00"
         set(value) {
             field = value
         }
 
-    var establishmentDateH: String = ""
+    var establishmentDateH: String = "2000-12-02T00:00:00"
         set(value) {
             field = value
         }
@@ -31,22 +31,22 @@ public class Waqf {
             field = value
         }
 
-    var waqfCountryId: Int = 0
+    var waqfCountryId: Int = 1
         set(value) {
             field = value
         }
 
-    var waqfCityId: Int = 0
+    var waqfCityId: Int = 1
         set(value) {
             field = value
         }
 
-    var waqfActivityId: Int = 0
+    var waqfActivityId: Int = 1
         set(value) {
             field = value
         }
 
-    var waqfTypeId: Int = 0
+    var waqfTypeId: Int = 1
         set(value) {
             field = value
         }

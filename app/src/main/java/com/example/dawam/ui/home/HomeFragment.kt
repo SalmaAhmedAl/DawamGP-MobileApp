@@ -80,7 +80,7 @@ class HomeFragment:Fragment() {
             override fun onFailure(call: Call<ArrayList<WaqfResponse>>, t: Throwable) {
                 viewBinding.content.loadingIndicator.isVisible=false
                 showErrorLayout(t.localizedMessage as String)
-                Log.e("onResponse: false",t.localizedMessage)
+                Log.e("onFailure: false",t.localizedMessage)
 
             }
 
@@ -117,7 +117,7 @@ class HomeFragment:Fragment() {
         adapter = WaqfAdapter(awqaf)
         adapter.onWaqfClick = object : WaqfAdapter.OnWaqfClick {
             override fun onWaqfBtnClick(id: Int) {
-                //We should start new activity ==> Waqf details
+                //We should start new activity ==> WaqfRequest details
                 val intent = Intent(requireActivity(), WaqfDetailsActivity::class.java)
                 intent.putExtra("ID", id)
                 startActivity(intent)
@@ -129,7 +129,7 @@ class HomeFragment:Fragment() {
         adapter = WaqfAdapter(newAwqaf)
         adapter.onWaqfClick = object : WaqfAdapter.OnWaqfClick {
             override fun onWaqfBtnClick(id: Int) {
-                //We should start new activity ==> Waqf details
+                //We should start new activity ==> WaqfRequest details
                 val intent = Intent(requireActivity(), WaqfDetailsActivity::class.java)
                 intent.putExtra("ID", id)
                 startActivity(intent)
