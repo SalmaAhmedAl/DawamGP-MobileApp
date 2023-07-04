@@ -62,7 +62,6 @@
 
                     <EditText
                         android:id="@+id/waqf_name_et"
-                        error="@{vm.waqfNameError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/waqf_name"
@@ -96,7 +95,6 @@
 
                     <EditText
                         android:id="@+id/waqf_date_et"
-                        error="@{vm.dateOfWaqfError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/waqf_date"
@@ -113,7 +111,6 @@
 
                     <EditText
                         android:id="@+id/waqf_dateH_et"
-                        error="@{vm.dateOfWaqfError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/waqf_date_H"
@@ -136,7 +133,6 @@
                     >
 
                     <AutoCompleteTextView
-                        error="@{vm.waqfActivityError}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -243,8 +239,7 @@
                     android:paddingVertical="8dp"
                     android:text="@string/request_to_add_waqf"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
 
