@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.dawam.R
 import com.example.dawam.databinding.ActivityHomeBinding
 import com.example.dawam.ui.about.AboutUsFragment
+import android.transition.TransitionInflater
 import com.example.dawam.ui.contact_us.ContactUsFragment
 import com.example.dawam.ui.apply_waqf.ApplyWaqfRequestFragment
 import com.google.android.material.navigation.NavigationBarView
@@ -51,7 +52,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun showFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment).commit()
+        val context = this
+        val transition = TransitionInflater.
+        from(context).inflateTransition(android.R.transition.fade)
+        fragment.enterTransition = transition
+        supportFragmentManager.beginTransaction().
+        replace(R.id.fragment_container,fragment).addToBackStack(null).commit()
     }
 
 }
