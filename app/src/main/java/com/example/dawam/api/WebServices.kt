@@ -1,9 +1,9 @@
 package com.example.dawam.api
 
-import com.example.dawam.api.model.WaqfRequest
 import com.example.dawam.api.model.waqfActivitiesResponse.WaqfActivitiesResponse
 import com.example.dawam.api.model.waqfCitiesResponse.WaqfCitiesResponse
 import com.example.dawam.api.model.waqfCountriesResponse.WaqfCountriesResponse
+import com.example.dawam.api.model.waqfRequest.WaqfRequest
 import com.example.dawam.api.model.waqfRequestResponse.WaqfRequestResponse
 import com.example.dawam.api.model.waqfResponse.WaqfResponse
 import com.example.dawam.api.model.waqfTypesResponse.WaqfTypesResponse

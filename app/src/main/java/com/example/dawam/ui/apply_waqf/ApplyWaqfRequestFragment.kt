@@ -17,9 +17,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.AdapterView.OnItemClickListener
-import com.example.dawam.api.model.WaqfRequest
+import android.widget.Toast
 import com.example.dawam.api.model.waqfRequestResponse.WaqfRequestResponse
 import com.example.dawam.api.model.waqfCitiesResponse.WaqfCitiesResponse
+import com.example.dawam.api.model.waqfRequest.WaqfRequest
 import com.example.dawam.api.model.waqfTypesResponse.WaqfTypesResponse
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -32,11 +33,11 @@ class ApplyWaqfRequestFragment : Fragment() {
     private lateinit var adapterCountries: ArrayAdapter<String>
     private lateinit var adapterCities: ArrayAdapter<String>
     private lateinit var adapterTypes: ArrayAdapter<String>
-    private val waqfImage ="http://afdinc-001-site5.itempurl.com/waqfImages/0WhatsAppImage2023-04-10at2.42.26AM.jpeg"
-    private val waqfDocument ="http://afdinc-001-site5.itempurl.com/waqfDocuments/0AI_Groups.pdf"
-    private val insUserId ="1"
-    private val documentNumber =8
-    val waqfRequest = WaqfRequest()
+
+    lateinit var country :WaqfCountriesResponse
+    lateinit var city :WaqfCitiesResponse
+    lateinit var type :WaqfTypesResponse
+    lateinit var activity :WaqfActivitiesResponse
 
 
 
@@ -45,8 +46,6 @@ class ApplyWaqfRequestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewBinding = FragmentApplyWaqfRequestBinding.inflate(inflater, container, false)
-
-
         return viewBinding.root
     }
 
@@ -59,10 +58,8 @@ class ApplyWaqfRequestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.vm = viewModel
         viewBinding.content.addBtn.setOnClickListener {
-           val f= viewModel.register()
-            if(f){
-                sendDataToApi()
-            }
+           viewModel.register()
+            sendDataToApi()
 
         }
         loadWaqfActivitiesDropdown()
@@ -73,6 +70,8 @@ class ApplyWaqfRequestFragment : Fragment() {
     }
 
     private fun sendDataToApi() {
+        viewBinding.content.idLoadingPB.setVisibility(View.VISIBLE)
+
         val waqfName = viewBinding.content.waqfNameEt.text.toString()
         val founderName =viewBinding.content.personNameEt.text.toString()
         val establishmentDate = viewBinding.content.waqfDateEt.text.toString()
@@ -83,20 +82,20 @@ class ApplyWaqfRequestFragment : Fragment() {
         val date = LocalDate.parse(establishmentDate, formatter)
         val isoFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
         val establishmentDateFormated = isoFormatter.format(date.atStartOfDay())
-
         val dateH = LocalDate.parse(establishmentDateH, formatter)
         val isoFormatterH = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
         val establishmentDateFormatedH = isoFormatterH.format(dateH.atStartOfDay())
-        waqfRequest.waqfName =waqfName
-        waqfRequest.founderName=founderName
-        waqfRequest.documentNumber=documentNumber
-        waqfRequest.establishmentDate=establishmentDateFormated
-        waqfRequest.establishmentDateH=establishmentDateFormatedH
-        waqfRequest.waqfDescription=waqfDescription
-        waqfRequest.waqfDocument=waqfDocument
-        waqfRequest.imageUrl=waqfImage
-        waqfRequest.insUserId=insUserId
 
+        val countryId = country.id
+        val cityId = city.id
+        val activityId = activity.id
+        val typeId = type.id
+        val waqfImage ="http://afdinc-001-site5.itempurl.com/waqfImages/0WhatsAppImage2023-04-10at2.42.26AM.jpeg"
+        val waqfDocument ="http://afdinc-001-site5.itempurl.com/waqfDocuments/0AI_Groups.pdf"
+        val insUserId =1
+        val documentNumber =8
+      val waqfRequest = WaqfRequest(waqfName, founderName, documentNumber, establishmentDateFormated, establishmentDateFormatedH, waqfDescription, countryId,cityId,
+      typeId, activityId, waqfImage, waqfDocument, insUserId)
         ApiManager.getApis().sendWaqfRequest(waqfRequest).enqueue(object : Callback<WaqfRequestResponse> {
             override fun onResponse(
                 call: Call<WaqfRequestResponse>,
@@ -105,6 +104,10 @@ class ApplyWaqfRequestFragment : Fragment() {
                 if (response.isSuccessful) {
                     val res = response.body()
                     Log.e("onResponse: result is ", res.toString())
+                    Toast.makeText(requireActivity(), "Data added to API", Toast.LENGTH_SHORT).show();
+                    // below line is for hiding our progress bar.
+                    viewBinding.content.idLoadingPB.setVisibility(View.GONE);
+
                 } else {
                     val errorCode = response.code()
                     val errorMessage = response.message()
@@ -116,6 +119,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                 p1.localizedMessage?.let { Log.e("onFailure: false", it) }
             }
         })
+
 
     }
 
@@ -145,8 +149,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                         (viewBinding.content.waqfActivities.editText as? AutoCompleteTextView)?.onItemClickListener = OnItemClickListener { parent, _, position, _ ->
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
-                                val activity= waqfActivitiesList.get(position)
-                                waqfRequest.waqfActivityId = activity.id
+                                activity= waqfActivitiesList.get(position)
                             }}
                     } else {
                         // Handle the error
@@ -186,8 +189,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                         (viewBinding.content.waqfCountries.editText as? AutoCompleteTextView)?.onItemClickListener = OnItemClickListener { parent, _, position, _ ->
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
-                               val country= countriesList.get(position)
-                                waqfRequest.waqfCountryId = country.id
+                                country= countriesList.get(position)
                             }
 
                         }
@@ -227,8 +229,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                         (viewBinding.content.waqfCities.editText as? AutoCompleteTextView)?.onItemClickListener = OnItemClickListener { parent, _, position, _ ->
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
-                                val city= citiesList.get(position)
-                                waqfRequest.waqfCityId = city.id
+                                city= citiesList.get(position)
                             }
                     } }
                     else {
@@ -265,8 +266,7 @@ class ApplyWaqfRequestFragment : Fragment() {
                         (viewBinding.content.waqfType.editText as? AutoCompleteTextView)?.onItemClickListener = OnItemClickListener { parent, _, position, _ ->
                             val selectedItem = parent.getItemAtPosition(position)
                             if (selectedItem is String) {
-                                val type= typesList.get(position)
-                                waqfRequest.waqfTypeId = type.id
+                                type= typesList.get(position)
                             }
                         } }
 
