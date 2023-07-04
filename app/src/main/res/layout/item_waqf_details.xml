@@ -7,10 +7,12 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
         <LinearLayout
             android:id="@+id/line_layout"
             android:layout_width="match_parent"
@@ -19,21 +21,13 @@
             android:layout_marginVertical="4dp"
             android:orientation="horizontal"
             android:layoutDirection="locale"
+            android:gravity="end"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/cairo_semi_bold"
-                android:padding="4dp"
-                android:layout_marginEnd="4dp"
-                tools:text="@string/waqf_name"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+
 
             <TextView
                 android:id="@+id/input"
@@ -46,6 +40,16 @@
                 tools:text="@string/cairoUniversity"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:padding="4dp"
+                android:layout_marginEnd="4dp"
+                tools:text="@string/waqf_name"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -53,10 +57,10 @@
         <View
             android:id="@+id/line"
             android:layout_width="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_height="1dp"
-            app:layout_constraintTop_toBottomOf="@id/line_layout"
-            android:background="@color/gray" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@color/gray"
+            android:layout_gravity="center"
+            />
+</androidx.appcompat.widget.LinearLayoutCompat>
+
 </layout>
