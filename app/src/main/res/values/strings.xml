@@ -1,14 +1,51 @@
 <resources>
 
-    <string name="title_activity_webview">WebviewActivity</string>
+    <string name="title_activity_webview" translatable="false">WebviewActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="please_fill_in_the_waqf_information_accurately_and_carefully">من فضلك املئ بيانات الوقف بدقة وتركيز</string>
-    <string name="viewing_the_legal_document">الاطلاع على الوثيقة القانونية</string>
-    <string name="waqf_date_H">تاريخ الوقف هجريًا</string>
-    <string name="choose_city">اختر المدينة</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="please_fill_in_the_waqf_information_accurately_and_carefully">Please fill in the waqf information accurately and attentively.</string>
+    <string name="cairoUniversity">Cairo University</string>
+    <string name="app_name">DAWAM</string>
+    <string name="search">search</string>
+    <string name="dawam_info">It is a means of preserving documented endowments in a way that cannot be changed or damaged throughout the ages  Decentralized using blockchain technology.</string>
+
+    <string name="dawam">DAWAM</string>
+    <string name="awqaf">Awqaf</string>
+    <string name="followUsForMoreInformation">Follow us to get more information</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="about_us_text1">عبر العهود الإسلامية أنشأت أوقاف خلدها التاريخ حققت مقاصدها عبر العصوروما خطه الرحالة وكاتبي السير أرشدنا إلى روائع لم تكن بالحسبان ففي أوج حضارتنا خصص وقف لكل حاجة ومطلب وكان لنا وراء كل وقف قصة يدلنا عليها الواقف والدافع والجهة الموقوف عليها والوقف ووثيقة الوقف وغيره</string>
+    <string name="about_us_text3">وهنا يأتي دور دوام لحماية هذه الحجج (الوثائق) حتى لا تؤول مآل اخواتها المفقودة جراء تغيير الظروف حيث يتم في دوام تخليد الأوقاف و حفظها للأبد على شبكة Ethereum القائمة على تقنية ال Blockchain و ذلك من خلال استخدام العقود الذكية و الرموز غير القابلة للاستبدال (NFTs) لتشفير الحجج الوقفية وبالتالي ضمان حماية الأوقاف من التغيير أو التلف أو الفقد.</string>
+    <string name="about_us_text2" translatable="false"> </string>
+    <string name="waqf_name">Waqf name</string>
+    <string name="name_of_the_owner_of_the_waqf">Name of the endower</string>
+    <string name="waqf_date">Waqf date</string>
+    <string name="waqf_type">Type of waqf</string>
+    <string name="waqf_description">Waqf description</string>
+    <string name="the_good_return_from_the_waqf">Revenue of the waqf</string>
+    <string name="apply">Apply</string>
+    <string name="contact_us">Contact us</string>
+    <string name="about_us">About us</string>
+    <string name="home">Home</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="quran">quran</string>
+    <string name="person_name">Name of the endower</string>
+    <string name="read_more">Read more</string>
+    <string name="viewing_the_legal_document">View the legal document</string>
+    <string name="request_to_add_waqf">Request for New waqf</string>
+    <string name="about_us_title_page">Who are we and what do we do?</string>
+    <string name="contact_us_title_page">Get in touch with our team</string>
+    <string name="waqf_date_H">The date of the Waqf in the Hijri calendar</string>
+    <string name="choose_city">Select the city</string>
+    <string name="waqfActivity">"Waqf activity: "</string>
+    <string name="choose_waqf_country">Choose the Waqf revenue</string>
+    <string name="choose_waqf_activity">Choose the Waqf activity</string>
+    <string name="choose_waqf_type">Choose the type of Waqf</string>
+    <string name="add">Add</string>
+    <string name="try_again">Try again</string>
 </resources>

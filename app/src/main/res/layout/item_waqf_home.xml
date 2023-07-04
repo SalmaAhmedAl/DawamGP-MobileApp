@@ -18,8 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layoutDirection="locale"
             app:layout_constraintBottom_toTopOf="@+id/founder_waqf_layout"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -28,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cairo"
                 android:padding="4dp"
-                android:text="جامعة القاهرة"
+                android:text="@string/cairoUniversity"
                 android:maxLines="2"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -52,9 +53,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layoutDirection="locale"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/type_waqf_layout"
-            app:layout_constraintEnd_toEndOf="@id/name_waqf_layout"
+            app:layout_constraintStart_toStartOf="@id/name_waqf_layout"
             app:layout_constraintTop_toBottomOf="@+id/name_waqf_layout">
 
             <TextView
@@ -84,8 +86,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layoutDirection="locale"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/founder_waqf_layout">
 
             <TextView

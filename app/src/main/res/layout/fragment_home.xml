@@ -20,7 +20,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll">
+                app:layout_scrollFlags="scroll"
+                android:layoutDirection="locale">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -33,7 +34,7 @@
                         android:elevation="8dp"
                         app:cardCornerRadius="12dp"
                         app:cardUseCompatPadding="true"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/logo"
                         app:layout_constraintWidth_percent="0.8"
                         app:layout_constraintTop_toTopOf="parent"
                         app:strokeColor="@color/gray"
@@ -43,11 +44,9 @@
                             android:id="@+id/searchBar"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:layoutDirection="rtl"
+                            android:layoutDirection="locale"
                             app:iconifiedByDefault="false"
                             app:queryBackground="@color/transparent"
-                            app:searchIcon="@drawable/ic_search"
-                            app:closeIcon="@drawable/ic_close"
                             app:queryHint="@string/search" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -56,8 +55,8 @@
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
-                        app:layout_constraintStart_toEndOf="@id/materialCardView"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/materialCardView"
                         android:scaleType="fitCenter"
                         app:layout_constraintTop_toTopOf="@id/materialCardView"
                         android:src="@drawable/ic_dawam" />
