@@ -17,6 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.AdapterView.OnItemClickListener
+import android.widget.EditText
 import android.widget.Toast
 import com.example.dawam.api.model.waqfRequestResponse.WaqfRequestResponse
 import com.example.dawam.api.model.waqfCitiesResponse.WaqfCitiesResponse
@@ -56,10 +57,19 @@ class ApplyWaqfRequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.vm = viewModel
         viewBinding.content.addBtn.setOnClickListener {
-           viewModel.register()
-            sendDataToApi()
+            if(validateEditText(viewBinding.content.waqfNameEt)
+                &&validateEditText(viewBinding.content.personNameEt)
+                &&validateEditText(viewBinding.content.waqfDateEt)
+                &&validateEditText(viewBinding.content.waqfDateHEt)
+                &&validateAutoCompleteTextView( viewBinding.content.waqfActivities.editText as AutoCompleteTextView)
+                &&validateEditText(viewBinding.content.waqfCountries.editText as AutoCompleteTextView)
+                &&validateEditText(viewBinding.content.waqfCities.editText as AutoCompleteTextView)
+                &&validateEditText(viewBinding.content.waqfType.editText as AutoCompleteTextView)
+                &&validateEditText(viewBinding.content.waqfDescriptionEt)
+            ){
+                sendDataToApi()
+            }
 
         }
         loadWaqfActivitiesDropdown()
@@ -78,13 +88,13 @@ class ApplyWaqfRequestFragment : Fragment() {
         val establishmentDateH = viewBinding.content.waqfDateHEt.text.toString()
         val waqfDescription = viewBinding.content.waqfDescriptionEt.text.toString()
 
-        val formatter = DateTimeFormatter.ofPattern("d/M/yyyy")
-        val date = LocalDate.parse(establishmentDate, formatter)
-        val isoFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
-        val establishmentDateFormated = isoFormatter.format(date.atStartOfDay())
-        val dateH = LocalDate.parse(establishmentDateH, formatter)
-        val isoFormatterH = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
-        val establishmentDateFormatedH = isoFormatterH.format(dateH.atStartOfDay())
+        val formatter = DateTimeFormatter.ofPattern("M/d/yyyy")
+        val date = LocalDate.parse("2/28/2000", formatter)
+        val isoFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
+        val establishmentDateFormatted = isoFormatter.format(date.atStartOfDay())
+
+        val dateH = LocalDate.parse("2/28/2000", formatter)
+        val establishmentDateFormattedH = isoFormatter.format(dateH.atStartOfDay())
 
         val countryId = country.id
         val cityId = city.id
@@ -94,8 +104,8 @@ class ApplyWaqfRequestFragment : Fragment() {
         val waqfDocument ="http://afdinc-001-site5.itempurl.com/waqfDocuments/0AI_Groups.pdf"
         val insUserId =1
         val documentNumber =8
-      val waqfRequest = WaqfRequest(waqfName, founderName, documentNumber, establishmentDateFormated, establishmentDateFormatedH, waqfDescription, countryId,cityId,
-      typeId, activityId, waqfImage, waqfDocument, insUserId)
+        val waqfRequest = WaqfRequest(waqfName, founderName, documentNumber, establishmentDateFormatted, establishmentDateFormattedH, waqfDescription, countryId,cityId,
+        typeId, activityId, waqfImage, waqfDocument, insUserId)
         ApiManager.getApis().sendWaqfRequest(waqfRequest).enqueue(object : Callback<WaqfRequestResponse> {
             override fun onResponse(
                 call: Call<WaqfRequestResponse>,
@@ -109,8 +119,8 @@ class ApplyWaqfRequestFragment : Fragment() {
                     viewBinding.content.idLoadingPB.setVisibility(View.GONE);
 
                 } else {
-                    val errorCode = response.code()
-                    val errorMessage = response.message()
+                    val errorCode = response.code( )
+                    val errorMessage = response.message( )
 
                 }
             }
@@ -283,6 +293,27 @@ class ApplyWaqfRequestFragment : Fragment() {
     }
 
 
+    // validate the EditText field
+    fun validateEditText(editText: EditText): Boolean {
+        val input = editText.text.toString().trim()
+        return if (input.isEmpty()) {
+            editText.error = "Field is required"
+            false
+        } else {
+            true
+        }
+    }
+
+    // validate the AutoCompleteTextView field
+    fun validateAutoCompleteTextView(autoCompleteTextView: AutoCompleteTextView): Boolean {
+        val input = autoCompleteTextView.text.toString().trim()
+        return if (input.isEmpty()) {
+            autoCompleteTextView.error = "Field is required"
+            false
+        } else {
+            true
+        }
+    }
 
 
 }

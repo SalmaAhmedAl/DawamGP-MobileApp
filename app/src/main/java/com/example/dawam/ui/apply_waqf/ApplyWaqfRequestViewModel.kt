@@ -24,8 +24,9 @@ class ApplyWaqfRequestViewModel: ViewModel() {
     val waqfDescriptionError = ObservableField<String?>()
 
     fun register() :Boolean{
+         if(validate())
+             return true
         return validate()
-
     }
     fun validate():Boolean{
         var isValid= true
