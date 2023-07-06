@@ -7,17 +7,15 @@ The project consists of a web and mobile application.
 
  exploring the stored documents and applying documents to be stored, and a web dashboard to enter documents and approve the applied documents.
 The platform turn document into NFT and store them on the blockchain (Ethereum as an example) to make sure they are immutable, secure, and everlasting.
-<p align="right">(<a href="https://github.com/JannaIbrahim/DawamGP">Explore more about DAWAM</a>)</p>
-See the [DAWAM graduation project]("https://github.com/JannaIbrahim/DawamGP") for more information.
+<p align="right"><a href="https://github.com/JannaIbrahim/DawamGP">Explore more about DAWAM</a></p>
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
+<div align="left">
   <a href="https://github.com/SalmaAhmedAl/DawamGP-MobileApp">
     <img src="app/src/main/res/drawable/ic_dawam.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">DawamGP-MobileApp</h3>
 
 ### DAWAM mobile application
 The mobile app allows users to explore all documents stored on the platform and search through them with an advanced search facility also they could request adding their documents.
