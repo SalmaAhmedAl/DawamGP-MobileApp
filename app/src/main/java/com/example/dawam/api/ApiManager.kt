@@ -10,7 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiManager {
     companion object {
         private var retrofit: Retrofit? = null
-
         @Synchronized
         private fun getInstance(): Retrofit {
             if (retrofit == null) {
@@ -27,15 +26,10 @@ class ApiManager {
             }
             return retrofit!!
         }
-
         fun getApis(): WebServices {
             return getInstance().create(WebServices::class.java)
         }
-
     }
-
-
-
 }
 
 

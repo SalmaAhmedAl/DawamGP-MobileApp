@@ -143,10 +143,6 @@ class ApplyWaqfRequestFragment : Fragment() {
 
 
     }
-
-
-
-
     private fun loadWaqfActivitiesDropdown() {
         adapterActivities = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, ArrayList())
         (viewBinding.content.waqfActivities.editText as? AutoCompleteTextView)?.setAdapter(adapterActivities)

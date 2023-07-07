@@ -23,7 +23,6 @@ class AboutUsFragment :Fragment(){
         viewBinding = FragmentAboutUsBinding.inflate(inflater, container, false)
         return viewBinding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var k = 1
@@ -45,7 +44,6 @@ class AboutUsFragment :Fragment(){
                 k--
                 showFragment1()
             }
-
         }
         var textView =viewBinding.title
         val anim = ScaleAnimation(
@@ -57,14 +55,12 @@ class AboutUsFragment :Fragment(){
         anim.duration = 500
         textView.startAnimation(anim)
     }
-
     private fun showFragment1() {
         val aboutFragment1 = AboutUs1Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
             ?.replace(R.id.fragment_about_us_container, aboutFragment1, "fragmnetId")
             ?.commit()
     }
-
     private fun showFragment2() {
         val aboutFragment2 = AboutUs2Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
@@ -77,6 +73,4 @@ class AboutUsFragment :Fragment(){
             ?.replace(R.id.fragment_about_us_container, aboutFragment3, "fragmnetId")
             ?.commit()
     }
-
-
 }

@@ -51,10 +51,7 @@ class ContactUsFragment :Fragment(){
     ): View {
         viewBinding= FragmentContactUsBinding.inflate(inflater, container, false)
         return viewBinding.root
-
-
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         adpater=ItemAdapter(items)
         viewBinding.content.contactUsRecycler.adapter=adpater

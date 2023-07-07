@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.view.animation.ScaleAnimation
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -30,7 +31,6 @@ class HomeFragment:Fragment() {
     lateinit var viewBinding :FragmentHomeBinding
     lateinit var adapter: WaqfAdapter
     lateinit var searchView : SearchView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //init viewModel
@@ -42,10 +42,14 @@ class HomeFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View{
         viewBinding= FragmentHomeBinding.inflate(inflater,container, false )
+        val callback = object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
         return viewBinding.root
     }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         loadAwqafListInHome()
         searchView =viewBinding.searchBar
@@ -62,17 +66,7 @@ class HomeFragment:Fragment() {
             }
         }
         )
-//        var textView =viewBinding.title
-//        val anim = ScaleAnimation(
-//            0f, 1f, // Start and end values for the X axis scaling
-//            0f, 1f, // Start and end values for the Y axis scaling
-//            Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
-//            Animation.RELATIVE_TO_SELF, 0.5f // Pivot point of Y scaling
-//        )
-//        anim.duration = 500
-//        textView.startAnimation(anim)
         }
-
     private fun searchWaqf(query: String) {
         showLoadingLayout()
         ApiManager.getApis().getSearch(query).enqueue(object:Callback<ArrayList<WaqfResponse>>{
@@ -96,9 +90,7 @@ class HomeFragment:Fragment() {
             }
 
         })
-
     }
-
     private fun loadAwqafListInHome() {
 
         showLoadingLayout()
@@ -123,7 +115,6 @@ class HomeFragment:Fragment() {
         })
 
     }
-
     private fun initRecyclerView(awqaf:ArrayList<WaqfResponse>?) {
         adapter = WaqfAdapter(awqaf)
         adapter.onWaqfClick = object : WaqfAdapter.OnWaqfClick {
@@ -148,12 +139,10 @@ class HomeFragment:Fragment() {
         }
         viewBinding.content.waqfRecycler.adapter=adapter
     }
-
     private fun showLoadingLayout() {
         viewBinding.content.errorLayout.isVisible=false
         viewBinding.content.loadingIndicator.isVisible=true
     }
-
     private fun showErrorLayout(errorMessage:String) {
         viewBinding.content.errorLayout.isVisible=true
         viewBinding.content.loadingIndicator.isVisible=false
@@ -162,5 +151,4 @@ class HomeFragment:Fragment() {
             loadAwqafListInHome()
         }
     }
-
 }

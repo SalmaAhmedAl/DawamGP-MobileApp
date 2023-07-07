@@ -85,7 +85,6 @@ class WaqfDetailsActivity : AppCompatActivity() {
         viewBinding.content.errorLayout.isVisible=false
         viewBinding.content.loadingIndicator.isVisible=true
     }
-
     private fun showErrorLayout(errorMessage:String, id:Int) {
         viewBinding.content.errorLayout.isVisible=true
         viewBinding.content.loadingIndicator.isVisible=false
@@ -94,17 +93,11 @@ class WaqfDetailsActivity : AppCompatActivity() {
             loadWaqfDetails(id)
         }
     }
-
     private fun initRecyclerView(items: List<LineItem>) {
         adapter= WaqfDetailsAdapter(items)
 
          viewBinding.content.recyclerView.adapter=adapter
     }
-
-
-
-
-
     private fun initListeners() {
         with(viewBinding) {
             backBtn.setOnClickListener{
