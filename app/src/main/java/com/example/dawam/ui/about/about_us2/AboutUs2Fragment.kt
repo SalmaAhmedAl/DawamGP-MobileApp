@@ -1,9 +1,14 @@
 package com.example.dawam.ui.about.about_us2
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.DecelerateInterpolator
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.dawam.databinding.FrameAboutUs2Binding
 
@@ -20,6 +25,7 @@ class AboutUs2Fragment : Fragment() {
         return viewBinding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.aboutText2.text="الوقف: هو حبس الأصل، وتسبيل المنفعة\n" +
@@ -28,6 +34,18 @@ class AboutUs2Fragment : Fragment() {
                 "-وقف أهلي: يكون ريعه مخصصاً للإنفاق على ذرية الواقف ونسله من بعده إلى حين انقراضهم فيؤول إلى الخيرات وجهات البر\n" +
                 "-وقف مختلط: و هو مزيج بين الخيري والأهلي وكان الأغلب في مصر.\n" +
                 "\n"
+
+        val myImageView: ImageView = viewBinding.aboutUsImg2
+
+        val valueAnimator = ValueAnimator.ofFloat(1f, 1.2f, 1f)
+        valueAnimator.duration = 3000 // بالمللي ثانية
+        valueAnimator.interpolator = DecelerateInterpolator()
+        valueAnimator.addUpdateListener { animation ->
+            val value = animation.animatedValue as Float
+            myImageView.scaleX = value
+            myImageView.scaleY = value
+        }
+        valueAnimator.start()
     }
 
 

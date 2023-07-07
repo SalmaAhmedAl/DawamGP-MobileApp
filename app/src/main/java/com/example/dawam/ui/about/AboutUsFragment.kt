@@ -45,32 +45,23 @@ class AboutUsFragment :Fragment(){
                 showFragment1()
             }
         }
-        var textView =viewBinding.title
-        val anim = ScaleAnimation(
-            0f, 1f, // Start and end values for the X axis scaling
-            0f, 1f, // Start and end values for the Y axis scaling
-            Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point of X scaling
-            Animation.RELATIVE_TO_SELF, 0.5f // Pivot point of Y scaling
-        )
-        anim.duration = 500
-        textView.startAnimation(anim)
     }
     private fun showFragment1() {
         val aboutFragment1 = AboutUs1Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
             ?.replace(R.id.fragment_about_us_container, aboutFragment1, "fragmnetId")
-            ?.commit()
+            ?.addToBackStack(null)?.commit()
     }
     private fun showFragment2() {
         val aboutFragment2 = AboutUs2Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
             ?.replace(R.id.fragment_about_us_container, aboutFragment2, "fragmnetId")
-            ?.commit()
+            ?.addToBackStack(null)?.commit()
     }
     private fun showFragment3() {
         val aboutFragment3 = AboutUs3Fragment()
         activity?.getSupportFragmentManager()?.beginTransaction()
             ?.replace(R.id.fragment_about_us_container, aboutFragment3, "fragmnetId")
-            ?.commit()
+            ?.addToBackStack(null)?.commit()
     }
 }
